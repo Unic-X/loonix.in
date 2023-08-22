@@ -1,0 +1,3 @@
+baseURL = 'http://loonix.in/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
