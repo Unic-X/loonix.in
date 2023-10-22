@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.119.0">
+  <style>
+     @font-face { 
+    font-family:epilogue;
+    font-style:normal;
+    font-weight:400;
+    src:url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXMDPiDA.ttf)format("truetype");
+  } 
+  @font-face { 
+    font-family:epilogue;
+    font-style:normal;
+    font-weight:900;
+    src:url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXmTTiDA.ttf)format("truetype");
+  } 
+  @font-face { 
+    font-family:literata;
+    font-style:italic;
+    font-weight:400;
+    src:url(https://fonts.gstatic.com/s/literata/v23/or3NQ6P12-iJxAIgLYT1PLs1Zd0nfUwAbeGVKoRYzNiCp1OUedn8_7XWSQ.ttf)format("truetype");
+  } 
+  @font-face { 
+    font-family:literata;
+    font-style:normal;
+    font-weight:400;
+    src:url(https://fonts.gstatic.com/s/literata/v23/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbBG_F_Y.ttf)format("truetype");
+  } 
+  @font-face { 
+    font-family:literata;
+    font-style:normal;
+    font-weight:700;
+    src:url(https://fonts.gstatic.com/s/literata/v23/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbPa4F_Y.ttf)format("truetype");
+  } 
+  * { 
+      box-sizing: border-box;
+  } 
+  
+  html { 
+      scroll-behavior: smooth;
+  } 
+  
+  :root { 
+      --flow-space: 1.77rem;
+  } 
+  
+  body { 
+      --dot-shadow-size:  0.75rem;  
+      --flow-space:  2.36rem; 
+      --flow-space:  3.15rem; 
+      --flow-space:  0.75rem; 
+      margin: 0;
+      min-height: 100vh; 
+      text-rendering: optimizeSpeed; 
+      line-height: 1.5;
+      background:  #2e3440; 
+      
+      color:  #e5e9f0 ; 
+      line-height: 1.5; 
+      font-size: 1.33rem; 
+      font-family: literata,Georgia,serif;
+  } 
+  
+  *,:before,:after { 
+      box-sizing: border-box;
+  } 
+  
+  :selection { 
+      color: #e5e9f0; 
+  } 
+  
+  ::-webkit-scrollbar { 
+      height: 1rem;
+  } 
+  
+  ::-webkit-scrollbar-thumb { 
+      background-color: #3b4252; 
+      border-radius: .25rem;
+  } 
+  
+  ::-webkit-scrollbar-track { 
+      background-color: transparent; 
+      border: 1px solid #4c566a; 
+      border-radius: .25rem;
+  } 
+  
+  .site-wrap { 
+      overflow-x: hidden; 
+      position: relative;
+  } 
+  
+  .site-foot { 
+      padding: 1.33rem 0 2.36rem; 
+      text-align: center;
+  } 
+  
+  .site-head { 
+      padding: 1.77rem 0;
+  } 
+  
+  .wrapper { 
+      max-width: 70rem; 
+      padding: 0 1.33rem; 
+      margin-left: auto; 
+      margin-right: auto; 
+      position: relative;
+  } 
+  
+  .site-head__inner { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: space-between; 
+      align-items: center;
+  } 
+  
+  .bg-light-glare { 
+      background: #39404d;
+  } 
+  
+  .page-header { 
+      padding: 3.15rem 0;
+  } 
+  
+  .bg-tertiary { 
+      background: #39404d;
+      
+  
+  } 
+  .bg-tertiary h2 { 
+    color: #ebcb8b;  
+  
+  } 
+  
+  .dot-shadow { 
+      --dot-shadow-size: 0.75rem; 
+      position: relative;
+  } 
+  
+  .panel { 
+      margin: 2.36rem 0; 
+      padding: 2.36rem 0;
+  } 
+  
+  @media (min-width: 37em){ 
+    .panel { 
+      margin: 3.15rem 0; 
+      padding: 3.15rem 0;
+    } 
+  }     
+  
+  .dot-shadow:before { 
+      content: ''; 
+      display: block; 
+      width: calc(100% + calc(var(--dot-shadow-size) * 2)); 
+      
+      height: calc(100% + calc(var(--dot-shadow-size) * 2)); 
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgZmlsbD0iI2NhYzZiOCIgY3g9IjEiIGN5PSI1IiByPSIxIi8+PGNpcmNsZSBmaWxsPSIjY2FjNmI4IiBjeD0iNCIgY3k9IjIiIHI9IjEiLz48L3N2Zz4=); 
+      position: absolute; 
+      top: calc(var(--dot-shadow-size) * -1); 
+      left: calc(var(--dot-shadow-size) * -1); 
+      z-index: -1;
+  } 
+  
+  .radius,.button,.dot-shadow:before { 
+      border-radius: .25rem;
+  } 
+  
+  .site-head__brand { 
+      flex-shrink: 0; 
+      margin-inline-end: 1.77rem;
+  } 
+  
+  .font-sans { 
+      font-family: epilogue,segoe ui,Roboto,helvetica neue,Arial,sans-serif;
+  } 
+  
+  .nav { 
+      line-height: 1; 
+      font-weight: 900; 
+      margin-top: -1rem; 
+      margin-inline-start: -1rem;
+  } 
+  
+  .site-head__nav { 
+      padding: .75rem 0;
+  } 
+  
+  .flow-space-700 { 
+      --flow-space: 2.36rem;
+  } 
+  
+  .page-content { 
+      line-height: 1.7;
+  } 
+  
+  .site-head__brand svg  { 
+      max-width: 6rem;
+  } 
+  
+  @media (min-width: 37em){ 
+    .site-head__brand svg  { 
+      width: 160px;
+    } 
+  }     
+  
+  .nav__list { 
+      display: flex; 
+      flex-wrap: wrap;
+  } 
+  
+  ul[class] { 
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  } 
+  
+  h1 { 
+      margin: 0;
+      font-weight: 900; 
+      font-family: epilogue,segoe ui,Roboto,helvetica neue,Arial,sans-serif; 
+      line-height: 1.1;
+  } 
+  .headline { 
+      font-size: 2.36rem; 
+      max-width: 18ch;
+  } 
+  
+  @media (min-width: 37em){ 
+    .headline { 
+      font-size: 3.15rem;
+    } 
+  }     
+  
+  .headline:after { 
+      content: '.';
+  } 
+  
+  .measure-long { 
+      max-width: 65ch;
+  } 
+  
+  .flow > * + *  { 
+      margin-top: var(--flow-space,1.77rem);
+  } 
+  
+  h2 { 
+      margin: 0;
+      font-weight: 900; 
+      font-family: epilogue,segoe ui,Roboto,helvetica neue,Arial,sans-serif; 
+      line-height: 1.1;
+  } 
+  .page-content > *  { 
+      max-width: 65ch;
+  } 
+  
+  .page-content h2  { 
+      font-size: 2.36rem;
+      --flow-space: 3.15rem;
+  } 
+  
+  .page-content ::-webkit-scrollbar-thumb { 
+      background-color: #5e81ac;
+  } 
+  
+  .page-content ::-webkit-scrollbar-track { 
+      border: 1px solid #5e81ac;
+  } 
+  
+  p { 
+      margin: 0;
+  } 
+  
+  .page-content h2 + *  { 
+      --flow-space: 0.75rem;
+  } 
+  
+  .nav__list > *  { 
+      padding-top: 1rem; 
+      padding-inline-start: 1rem;
+  } 
+  
+  .nav a  { 
+       
+      display: block; 
+      position: relative;
+  } 
+  
+  a {
+      text-decoration: none;
+      color: #88c0d0;
+      font-weight: bold;
+  }
+  
+  .nav a[data-state="active"]::before, .nav a[aria-current="page"]::before { 
+      display: block; 
+      width: 100%; 
+      height: .25rem; 
+      position: absolute; 
+      top: 100%; 
+      left: 0;
+      margin-top: .25rem; 
+      background: #bf616a;
+  } 
+  
+  </style>
+  </head>
+<body>
+  
+<div class="site-wrap">
+  <header class="site-head" role="banner">
+    <div class="wrapper">
+      <div class="site-head__inner">
+        <a aria-label="rockyourcode - home" class="site-head__brand" href="/">
+          <svg focusable="false" width="50" height="50" xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 1024 1024">
+            <path   fill=" #e5e9f0 " d="M516 673c0 4.4 3.4 8 7.5 8h185c4.1.0 7.5-3.6 7.5-8v-48c0-4.4-3.4-8-7.5-8h-185c-4.1.0-7.5 3.6-7.5 8v48zm-194.9 6.1 192-161c3.8-3.2 3.8-9.1.0-12.3l-192-160.9A7.95 7.95.0 00308 351v62.7c0 2.4 1 4.6 2.9 6.1L420.7 512l-109.8 92.2a8.1 8.1.0 00-2.9 6.1V673c0 6.8 7.9 10.5 13.1 6.1zM880 112H144c-17.7.0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7.0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+            </path>
+          </svg>
+        </a>
+        <nav aria-label="Primary" class="[ nav ] site-head__nav font-sans">
+          <ul class="nav__list">
+            <li>
+              <a href="/posts/">
+                Posts
+              </a>
+            </li>
+            <li>
+              <a aria-current="page" data-state="active" href="/about/" >
+                About
+              </a>
+            </li>
+            <li>
+              <a href="/books/">
+                Books
+              </a>
+            </li>
+            <li>
+              <a href="/contact/">
+                Contact
+              </a>
+            </li>
+            <li>
+              <a href="/index.xml/">
+                RSS Feed
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  
+  <footer role="contentinfo" class="site-foot">
+    <div class="wrapper">
+      <p>
+          <a href="https://github.com/bsach64/loonix.in">Source</a> under MPL-2.0 license
+        </a>
+      </p>
+    </div>
+  </footer>
+</div>
+
+</body>
+
+</html>
