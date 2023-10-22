@@ -1,5 +1,40 @@
 ---
-title: Home
+title: "Welcome to My Hugo Site"
 ---
 
-sex sex sex sex sex sex sex sex sex sex 
+<div class="[ page-header ] bg-light-glare">
+          <div class="[ wrapper ] flow">
+            <h1 class="[ page-header__heading ] headline" data-highlight="primary">
+              About
+            </h1>
+            <div class="[ page-header__summary ] measure-long">
+              <p>
+                Hi there. I’m Arman, currently a Sophomore at IIITNR this blog is collection of my programming.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="[ panel dot-shadow ] bg-tertiary color-dark">
+          <div class="[ page-content ] flow wrapper flow-space-700 color-dark">
+            <h2>
+              Hi there.
+            </h2>
+            <p>
+                This site is mostly about my personal rant and some literature work ive read and some reviews as well 
+            </p>
+            </p>
+            <p>
+              You can find me elsewhere on 
+              <a href="https://github.com/Unic-X">
+                GitHub
+              </a>
+              , 
+              or 
+              <a href="https://instagram.com/arman_kshatri" >
+                Instagram
+              </a>
+              and <a href="https://x.com/UnicX2?s=09">Twitter</a>
+              .
+            </p>
+          </div>
+        </div>
