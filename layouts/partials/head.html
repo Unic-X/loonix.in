@@ -46,8 +46,6 @@
   
   body { 
       --dot-shadow-size:  0.75rem;  
-      --flow-space:  2.36rem; 
-      --flow-space:  3.15rem; 
       --flow-space:  0.75rem; 
       margin: 0;
       min-height: 100vh; 
@@ -56,7 +54,6 @@
       background:  #2e3440; 
       
       color:  #e5e9f0 ; 
-      line-height: 1.5; 
       font-size: 1.33rem; 
       font-family: literata,Georgia,serif;
   } 
@@ -195,6 +192,8 @@
   
   .site-head { 
       padding: 1.77rem 0;
+      border-bottom: 0.25rem dotted #88c0d0;
+
   } 
   
   .wrapper { 
@@ -204,6 +203,10 @@
       margin-right: auto; 
       position: relative;
   } 
+
+  .b_wrap{
+    padding-block: 2rem;
+  }
   
   .site-head__inner { 
       display: flex; 
@@ -219,6 +222,7 @@
   .bg-light-glare-blog{
     background: #39404d;
     padding: 1rem;
+    border-radius: 0.5rem;
   }
 
 
@@ -258,7 +262,7 @@
       content: ''; 
       display: block; 
       width: calc(100% + calc(var(--dot-shadow-size) * 2)); 
-      
+      opacity: 60%;
       height: calc(100% + calc(var(--dot-shadow-size) * 2)); 
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgZmlsbD0iI2NhYzZiOCIgY3g9IjEiIGN5PSI1IiByPSIxIi8+PGNpcmNsZSBmaWxsPSIjY2FjNmI4IiBjeD0iNCIgY3k9IjIiIHI9IjEiLz48L3N2Zz4=); 
       position: absolute; 
@@ -339,6 +343,7 @@
   
   .headline:after { 
       content: '.';
+      color:#ebcb8b;
   } 
   
   .measure-long { 
@@ -370,10 +375,6 @@
   
   .page-content ::-webkit-scrollbar-track { 
       border: 1px solid #5e81ac;
-  } 
-  
-  p { 
-      margin: 0;
   } 
   
   .page-content h2 + *  { 
@@ -410,4 +411,3 @@
   
   </style>
   </head>
-
