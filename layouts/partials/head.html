@@ -1,4 +1,6 @@
 <head>
+
+  <title>Loonix | {{.Page.Title}}</title>
   <style>
      @font-face { 
     font-family:epilogue;
@@ -59,6 +61,105 @@
       font-family: literata,Georgia,serif;
   } 
   
+  .flat .post {
+    margin-bottom: 45px;
+}
+
+.post-header {
+    display: flex;
+}
+
+
+.post-header .meta .date {
+    margin-right: 19px;
+    width: 75px;
+    text-align: center;
+}
+
+.post-header .meta .date .day {
+    font-family: "Roboto Slab Regular", serif;
+    font-weight: 700;
+    line-height: 70%;
+    font-size: 3em;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+    color: rgba(235,203,139,.95);
+}
+
+.post-header .meta .date .rest {
+    display: block;
+    font-size: 0.80em;
+
+}
+
+.post-header h1.title {
+    margin: -10px 0 0 0;
+
+    font-weight: bold;
+}
+
+.markdown {
+    overflow: hidden;
+}
+
+.post .title.small {
+    margin: 0;
+
+}
+
+.post .draft-label {
+    color: var(--bq-color);
+    text-decoration: underline;
+    padding: 2px 4px;
+    margin-left: 6px;
+    font-size: 1.4rem;
+}
+
+.post .tags a {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0px 6px;
+    line-height: 20px;
+    font-size: 0.85em;
+    text-decoration: none;
+    margin: 0 10px 0 0;
+}
+
+.tags p {
+  margin: 10px 0 10px 0;
+}
+
+.post .tags a:hover {
+    border: 1px solid var(--bg-color);
+}
+
+.post ul li {
+    margin-bottom: 10px;
+}
+
+.post ul li p {
+    display: inline;
+}
+
+.list .posts .post-header .meta {
+    margin-bottom: 20;
+}
+
+.post-meta {
+  color: var(--hover-color);
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 0 10px;
+}
+
+
+.description {
+  margin: 0;
+}
+
+
   *,:before,:after { 
       box-sizing: border-box;
   } 
@@ -114,6 +215,13 @@
   .bg-light-glare { 
       background: #39404d;
   } 
+
+  .bg-light-glare-blog{
+    background: #39404d;
+    padding: 1rem;
+  }
+
+
   
   .page-header { 
       padding: 3.15rem 0;
@@ -302,3 +410,4 @@
   
   </style>
   </head>
+
