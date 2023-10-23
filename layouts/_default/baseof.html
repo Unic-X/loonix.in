@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 {{partial "head.html" . }}
-<body>
-    {{ partial "header.html" . }}
-    {{ block "main" . }}
-        <!--MAIN-->
-    {{ end }}
 
-    {{partial "footer.html" .}}
+<body>
+
+    <div class="wrapper">
+
+        {{ partial "header.html" . }}
+        {{ block "main" . }}
+        <!--MAIN-->
+        {{ end }}
+
+        {{partial "footer.html" .}}
+
+    </div>
 </body>
+
 </html>

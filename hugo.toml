@@ -2,3 +2,6 @@ baseURL = 'http://loonix.in/'
 languageCode = 'en-us'
 title = 'Loonix Ji'
 
+[outputs]
+ home = ['html', 'rss']
+  section = ['html', 'rss']

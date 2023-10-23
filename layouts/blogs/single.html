@@ -1,0 +1,20 @@
+{{- define "main" }}
+
+<div class=" site-head">
+
+    <h1 class="page-title headline">{{ .Title }}</h1>
+    <i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+            {{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}
+        </time>
+    </i>
+    <content>
+        {{ .Content }}
+    </content>
+    <p>
+        {{ range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+        {{end}}
+    </p>
+</div>
+{{end}}
