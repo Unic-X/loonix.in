@@ -5,3 +5,8 @@ title = 'Loonix Ji'
 [outputs]
  home = ['html', 'rss']
   section = ['html', 'rss']
+
+[markup]
+  [markup.highlight]
+
+    noClasses = false

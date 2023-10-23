@@ -1,0 +1,13 @@
+{{- define "main" }}
+
+<div class=" site-head">
+    <content>
+        {{ .Content }}
+    </content>
+    <p>
+        {{ range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+        {{end}}
+    </p>
+</div>
+{{end}}

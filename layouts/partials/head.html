@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" type="text/css">
 
     <title>Loonix | {{.Page.Title}}</title>
     <style>
@@ -370,11 +371,15 @@
             list-style: none;
         }
 
-        h1 {
+        h1{
             margin: 0;
             font-weight: 900;
             font-family: epilogue, segoe ui, Roboto, helvetica neue, Arial, sans-serif;
             line-height: 1.1;
+        }
+
+        h3 {
+            font-family: epilogue, segoe ui, Roboto, helvetica neue, Arial, sans-serif;
         }
 
         .headline {
