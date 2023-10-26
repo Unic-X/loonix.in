@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}" type="text/css">
+    <title>Loonix | {{.Page.Title}}</title>
     {{ $styles := resources.Get "css/head.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
-    <title>Loonix | {{.Page.Title}}</title>
 </head>
