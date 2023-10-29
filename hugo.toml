@@ -10,3 +10,5 @@ title = 'Loonix Ji'
   [markup.highlight]
 
     noClasses = false
+    lineNumbersInTable = true
+

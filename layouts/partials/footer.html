@@ -9,7 +9,13 @@
       </a>
       <br>
       Site proudly generated using <a href="https://gohugo.io/">HUGO</a>
-
+      
     </p>
   </div>
+  {{ if (findRE "<pre" .Content 1) }}
+
+  {{$script:= resources.Get "js/head.js"| minify}}
+  <script src="{{$script.Permalink}}"></script>
+
+  {{end}}
 </footer>

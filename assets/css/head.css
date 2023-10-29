@@ -170,16 +170,16 @@ body {
 
 ::-webkit-scrollbar {
     height: 1rem;
+    width: 0.75rem;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #3b4252;
-    border-radius: .25rem;
+    background-color: #787f90;
+    border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-track {
     background-color: transparent;
-    border: 1px solid #4c566a;
     border-radius: .25rem;
 }
 

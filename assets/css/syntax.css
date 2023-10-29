@@ -1,9 +1,26 @@
 .chroma {
     padding: 1rem;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    overflow: scroll;
+    overflow-y: hidden;
     /* Adjust the padding value as per your preference */
 }
+
+.chroma::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.75rem;
+}
+
+.chroma::-webkit-scrollbar-thumb {
+    background-color: #495168;
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: .25rem;
+}
+
+
 
 /* Add padding to line numbers (if your syntax highlighting includes them) */
 .chroma .line-numbers {
