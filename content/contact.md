@@ -16,4 +16,3 @@ title : Contact
 
 ### Or Else best way i would say:
 
-[arman singh kshatri 69 at gmail dot com](mailto:armansinghkshatri69@gmail.com)

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+{{partial "head.html" .}}
+<style>
+    .bottom {
+        border-top: 0.25rem dotted #88c0d0;
+    }
+    
+    .wrapper{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .headline{
+        max-width:none;
+    }
+
+
+</style>
+
+<body>
+
+  <div class="site-wrap">
+    {{partial "header.html" . }}
+
+    <main tabindex="-1">
+      <article>
+        <div class="[ page-header ] bg-light-glare">
+          <div class="[ wrapper ] flow">
+            <h1 class="[ page-header__heading ] headline">
+              404</h1>
+            <div>
+              <p>
+               The page you are looking for is not yet availabe :(
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+
+    </main>
+    <div class="bottom">
+        {{partial "footer.html" .}}
+    </div>
+    
+  </div>
+
+</body>
+
+</html>
