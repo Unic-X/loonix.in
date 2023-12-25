@@ -1,6 +1,7 @@
 baseURL = 'http://loonix.in/'
 languageCode = 'en-us'
 title = 'Loonix Ji'
+tableOfContents = true
 
 [outputs]
  home = ['html', 'rss']
