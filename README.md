@@ -1,7 +1,7 @@
 # Loonix.in : Website for personal Masti
 
 
-Repository for our personal [wesbite][site]
+Repository for our personal [wesbite][site] (*will be deployed soon*)
 
 [site]: https://loonix.in
 
@@ -9,17 +9,21 @@ Repository for our personal [wesbite][site]
 
 ### Installation
 1. [Intall Hugo][install]
+`The minimum hugo version required is v0.119.0`
+
 
 [install]: https://gohugo.io/installation/
 
 2. Clone this repository
 
 
-
 ```sh
 git clone https://github.com/bsach64/loonix.in
 cd loonix.in
 ```
+
+
+`During deployment its important to give necessary file permissions to nginx's www-data group`
 
 
 ### Development
@@ -44,4 +48,4 @@ The content of this repository is licensed under the terms of the MPL [License][
 
 ## Acknowledgements
 
-Thank you to [Bhavik](https://github.com/bsach64) for sharing the code of `Book` pages.
+Thanks to [Bhavik](https://github.com/bsach64) for sharing the code of `Book` pages.
