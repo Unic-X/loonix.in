@@ -3,11 +3,10 @@
 <div class=" site-head">
 
     <h1 class="page-title headline">{{ .Title }}</h1>
-    <i>
-        <time datetime='{{ .Date.Format "2006-01-02" }}'>
-            {{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}
-        </time>
-    </i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}</time>
+        <div class="description">
+            {{ .Description }} 
+        </div>
     <content>
         {{ .Content }}
     </content>

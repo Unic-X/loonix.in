@@ -1,4 +1,13 @@
 @font-face {
+    font-family: "GT Walsheim Pro Medium Regular";
+    src: url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.eot");
+    src: url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.svg#GT Walsheim Pro Medium Regular")format("svg");
+}
+@font-face {
     font-family: epilogue;
     font-style: normal;
     font-weight: 400;
@@ -33,6 +42,11 @@
     src: url(https://fonts.gstatic.com/s/literata/v23/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbPa4F_Y.ttf)format("truetype");
 }
 
+.matter{
+    display: flex;
+    align-items: center;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -56,7 +70,7 @@ body {
 
     color: #e5e9f0;
     font-size: 1.33rem;
-    font-family: literata, Georgia, serif;
+    font-family: "GT Walsheim Pro Medium Regular";
 }
 
 .flat .post {
@@ -66,7 +80,6 @@ body {
 .post-header {
     display: flex;
 }
-
 
 .post-header .meta .date {
     margin-right: 19px;
@@ -88,7 +101,6 @@ body {
 .post-header .meta .date .rest {
     display: block;
     font-size: 0.80em;
-
 }
 
 .post-header h1.title {
@@ -155,6 +167,7 @@ body {
 
 .description {
     margin: 0;
+    font-size:medium;
 }
 
 
@@ -228,6 +241,18 @@ body {
     background: #39404d;
     padding: 1rem;
     border-radius: 0.5rem;
+}
+
+
+.landscape{
+    border: 1px #ccc; /* Optional: Add a border for visualization */
+    max-width: 100%; /* Set the image width to 100% of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+    /* Remove any default spacing */       
+    margin: auto; 
+    overflow: hidden;
+    display: block;
+    object-fit: scale-down;
 }
 
 .cropped-image-container {
