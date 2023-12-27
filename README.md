@@ -1,9 +1,9 @@
 # Loonix.in : Website for personal Masti
 
 
-Repository for our personal [wesbite][site] (*will be deployed soon*)
+Repository for our personal [wesbite][site] (*Deployed without SSL*)
 
-[site]: https://loonix.in
+[site]: http://loonix.in
 
 ## Usage
 
