@@ -1,11 +1,18 @@
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="/loonix.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/loonix.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="/loonix.svg">
+    <link rel="icon" id="favicon" type="image/png" sizes="32x32" href="/loonix.svg">
+    <link rel="icon" id="favicon2" type="image/png" sizes="16x16" href="/loonix.svg">
+    <script>
+        let faviconElem = document.getElementById('favicon');
+        faviconElem.setAttribute('href',`./loonix${Math.floor(6*Math.random())+1}.svg`);
+        let faviconElem2 = document.getElementById('favicon2');
+        faviconElem.setAttribute('href',`./loonix${Math.floor(6*Math.random())+1}.svg`);
+    </script>
+
     {{ $styles := resources.Get "css/syntax.css" | minify }} 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     <title>Loonix | {{.Page.Title}}</title>
     {{ $styles := resources.Get "css/head.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+    
     <meta charset="UTF-8">
 </head>
