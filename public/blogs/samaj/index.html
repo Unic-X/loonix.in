@@ -1,506 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <title>Loonix | IDK</title>
-  <style>
-     @font-face { 
-    font-family:epilogue;
-    font-style:normal;
-    font-weight:400;
-    src:url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXMDPiDA.ttf)format("truetype");
-  } 
-  @font-face { 
-    font-family:epilogue;
-    font-style:normal;
-    font-weight:900;
-    src:url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXmTTiDA.ttf)format("truetype");
-  } 
-  @font-face { 
-    font-family:literata;
-    font-style:italic;
-    font-weight:400;
-    src:url(https://fonts.gstatic.com/s/literata/v23/or3NQ6P12-iJxAIgLYT1PLs1Zd0nfUwAbeGVKoRYzNiCp1OUedn8_7XWSQ.ttf)format("truetype");
-  } 
-  @font-face { 
-    font-family:literata;
-    font-style:normal;
-    font-weight:400;
-    src:url(https://fonts.gstatic.com/s/literata/v23/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbBG_F_Y.ttf)format("truetype");
-  } 
-  @font-face { 
-    font-family:literata;
-    font-style:normal;
-    font-weight:700;
-    src:url(https://fonts.gstatic.com/s/literata/v23/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbPa4F_Y.ttf)format("truetype");
-  } 
-  * { 
-      box-sizing: border-box;
-  } 
-  
-  html { 
-      scroll-behavior: smooth;
-  } 
-  
-  :root { 
-      --flow-space: 1.77rem;
-  } 
-  
-  body { 
-      --dot-shadow-size:  0.75rem;  
-      --flow-space:  0.75rem; 
-      margin: 0;
-      min-height: 100vh; 
-      text-rendering: optimizeSpeed; 
-      line-height: 1.5;
-      background:  #2e3440; 
-      
-      color:  #e5e9f0 ; 
-      font-size: 1.33rem; 
-      font-family: literata,Georgia,serif;
-  } 
-  
-  .flat .post {
-    margin-bottom: 45px;
-}
-
-.post-header {
-    display: flex;
-}
+    <link rel="apple-touch-icon" sizes="180x180" href="/loonix.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/loonix.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/loonix.svg">
+     
+    <link rel="stylesheet" href="https://loonix.in/css/syntax.min.css" media="screen">
+    <title>Loonix | IDK</title>
+    
+    <link rel="stylesheet" href="https://loonix.in/css/head.min.css" media="screen">
+</head>
 
 
-.post-header .meta .date {
-    margin-right: 19px;
-    width: 75px;
-    text-align: center;
-}
-
-.post-header .meta .date .day {
-    font-family: "Roboto Slab Regular", serif;
-    font-weight: 700;
-    line-height: 70%;
-    font-size: 3em;
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 1.25rem;
-    color: rgba(235,203,139,.95);
-}
-
-.post-header .meta .date .rest {
-    display: block;
-    font-size: 0.80em;
-
-}
-
-.post-header h1.title {
-    margin: -10px 0 0 0;
-
-    font-weight: bold;
-}
-
-.markdown {
-    overflow: hidden;
-}
-
-.post .title.small {
-    margin: 0;
-
-}
-
-.post .draft-label {
-    color: var(--bq-color);
-    text-decoration: underline;
-    padding: 2px 4px;
-    margin-left: 6px;
-    font-size: 1.4rem;
-}
-
-.post .tags a {
-    display: inline-block;
-    border: 1px solid;
-    border-radius: 3px;
-    padding: 0px 6px;
-    line-height: 20px;
-    font-size: 0.85em;
-    text-decoration: none;
-    margin: 0 10px 0 0;
-}
-
-.tags p {
-  margin: 10px 0 10px 0;
-}
-
-.post .tags a:hover {
-    border: 1px solid var(--bg-color);
-}
-
-.post ul li {
-    margin-bottom: 10px;
-}
-
-.post ul li p {
-    display: inline;
-}
-
-.list .posts .post-header .meta {
-    margin-bottom: 20;
-}
-
-.post-meta {
-  color: var(--hover-color);
-  font-size: 14px;
-  font-style: italic;
-  margin: 0 0 10px;
-}
-
-
-.description {
-  margin: 0;
-}
-
-
-  *,:before,:after { 
-      box-sizing: border-box;
-  } 
-  
-  :selection { 
-      color: #e5e9f0; 
-  } 
-  
-  ::-webkit-scrollbar { 
-      height: 1rem;
-  } 
-  
-  ::-webkit-scrollbar-thumb { 
-      background-color: #3b4252; 
-      border-radius: .25rem;
-  } 
-  
-  ::-webkit-scrollbar-track { 
-      background-color: transparent; 
-      border: 1px solid #4c566a; 
-      border-radius: .25rem;
-  } 
-  
-  .site-wrap { 
-      overflow-x: hidden; 
-      position: relative;
-  } 
-  
-  .site-foot { 
-        font-size: smaller;
-      padding: 0 0 2.36rem; 
-      text-align: right;
-      
-  } 
-  
-  .site-head { 
-      padding: 1.77rem 0;
-      border-bottom: 0.25rem dotted #88c0d0;
-
-  } 
-  
-  .wrapper { 
-      max-width: 70rem; 
-      padding: 0 1.33rem; 
-      margin-left: auto; 
-      margin-right: auto; 
-      position: relative;
-  } 
-
-  .b_wrap{
-    padding-block: 2rem;
-  }
-  
-  .site-head__inner { 
-      display: flex; 
-      flex-wrap: wrap; 
-      justify-content: space-between; 
-      align-items: center;
-  } 
-  
-  .bg-light-glare { 
-      background: #39404d;
-  } 
-
-  .bg-light-glare-blog{
-    background: #39404d;
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
-
-
-  
-  .page-header { 
-      padding: 3.15rem 0;
-  } 
-  
-  .bg-tertiary { 
-      background: #39404d;
-      
-  
-  } 
-  .bg-tertiary h2 { 
-    color: #ebcb8b;  
-  
-  } 
-  
-  .dot-shadow { 
-      --dot-shadow-size: 0.75rem; 
-      position: relative;
-  } 
-  
-  .panel { 
-      margin: 2.36rem 0; 
-      padding: 2.36rem 0;
-  } 
-  
-  @media (min-width: 37em){ 
-    .panel { 
-      margin: 3.15rem 0; 
-      padding: 3.15rem 0;
-    } 
-  }     
-  
-  .dot-shadow:before { 
-      content: ''; 
-      display: block; 
-      width: calc(100% + calc(var(--dot-shadow-size) * 2)); 
-      opacity: 60%;
-      height: calc(100% + calc(var(--dot-shadow-size) * 2)); 
-      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgZmlsbD0iI2NhYzZiOCIgY3g9IjEiIGN5PSI1IiByPSIxIi8+PGNpcmNsZSBmaWxsPSIjY2FjNmI4IiBjeD0iNCIgY3k9IjIiIHI9IjEiLz48L3N2Zz4=); 
-      position: absolute; 
-      top: calc(var(--dot-shadow-size) * -1); 
-      left: calc(var(--dot-shadow-size) * -1); 
-      z-index: -1;
-  } 
-  
-  .radius,.button,.dot-shadow:before { 
-      border-radius: .25rem;
-  } 
-  
-  .site-head__brand { 
-      flex-shrink: 0; 
-      margin-inline-end: 1.77rem;
-  } 
-  
-  .font-sans { 
-      font-family: epilogue,segoe ui,Roboto,helvetica neue,Arial,sans-serif;
-  } 
-  
-  .nav { 
-      line-height: 1; 
-      font-weight: 900; 
-      margin-top: -1rem; 
-      margin-inline-start: -1rem;
-  } 
-  
-  .site-head__nav { 
-      padding: .75rem 0;
-  } 
-  
-  .flow-space-700 { 
-      --flow-space: 2.36rem;
-  } 
-  
-  .page-content { 
-      line-height: 1.7;
-  } 
-  
-  .site-head__brand svg  { 
-      max-width: 6rem;
-  } 
-  
-  @media (min-width: 37em){ 
-    .site-head__brand svg  { 
-      width: 160px;
-    } 
-  }     
-  
-  .nav__list { 
-      display: flex; 
-      flex-wrap: wrap;
-  } 
-  
-  ul[class] { 
-      padding: 0;
-      margin: 0;
-      list-style: none;
-  } 
-  
-  h1 { 
-      margin: 0;
-      font-weight: 900; 
-      font-family: epilogue,segoe ui,Roboto,helvetica neue,Arial,sans-serif; 
-      line-height: 1.1;
-  } 
-  .headline { 
-      font-size: 2.36rem; 
-      max-width: 18ch;
-  } 
-  
-  @media (min-width: 37em){ 
-    .headline { 
-      font-size: 3.15rem;
-    } 
-  }     
-  
-  .headline:after { 
-      content: '.';
-      color:#ebcb8b;
-  } 
-  
-  .measure-long { 
-      max-width: 65ch;
-  } 
-  
-  .flow > * + *  { 
-      margin-top: var(--flow-space,1.77rem);
-  } 
-  
-  h2 { 
-      margin: 0;
-      font-weight: 900; 
-      font-family: epilogue,segoe ui,Roboto,helvetica neue,Arial,sans-serif; 
-      line-height: 1.1;
-  } 
-  .page-content > *  { 
-      max-width: 65ch;
-  } 
-  
-  .page-content h2  { 
-      font-size: 2.36rem;
-      --flow-space: 3.15rem;
-  } 
-  
-  .page-content ::-webkit-scrollbar-thumb { 
-      background-color: #5e81ac;
-  } 
-  
-  .page-content ::-webkit-scrollbar-track { 
-      border: 1px solid #5e81ac;
-  } 
-  
-  .page-content h2 + *  { 
-      --flow-space: 0.75rem;
-  } 
-  
-  .nav__list > *  { 
-      padding-top: 1rem; 
-      padding-inline-start: 1rem;
-  } 
-  
-  .nav a  { 
-       
-      display: block; 
-      position: relative;
-  } 
-  
-  a {
-      text-decoration: none;
-      color: #88c0d0;
-      font-weight: bold;
-  }
-  
-  .nav a[data-state="active"]::before, .nav a[aria-current="page"]::before { 
-      display: block; 
-      width: 100%; 
-      height: .25rem; 
-      position: absolute; 
-      top: 100%; 
-      left: 0;
-      margin-top: .25rem; 
-      background: #bf616a;
-  } 
-  
-  </style>
-  </head>
 <body>
-    
+
     <div class="wrapper">
 
-    <header class="site-head" role="banner">
-    <div class="wrapper">
-      <div class="site-head__inner">
-        <a aria-label="rockyourcode - home" class="site-head__brand" href="/">
-          <svg focusable="false" width="50" height="50" xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 1024 1024">
-            <path   fill=" #e5e9f0 " d="M516 673c0 4.4 3.4 8 7.5 8h185c4.1.0 7.5-3.6 7.5-8v-48c0-4.4-3.4-8-7.5-8h-185c-4.1.0-7.5 3.6-7.5 8v48zm-194.9 6.1 192-161c3.8-3.2 3.8-9.1.0-12.3l-192-160.9A7.95 7.95.0 00308 351v62.7c0 2.4 1 4.6 2.9 6.1L420.7 512l-109.8 92.2a8.1 8.1.0 00-2.9 6.1V673c0 6.8 7.9 10.5 13.1 6.1zM880 112H144c-17.7.0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7.0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
-            </path>
-          </svg>
-        </a>
-        <nav aria-label="Primary" class="[ nav ] site-head__nav font-sans">
-          <ul class="nav__list">
-            <li>
-              <a href="/blogs/">
-                Posts
-              </a>
-            </li>
-            <li>
-              <a aria-current="page" data-state="active" href="/about/" >
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/books/">
-                Books
-              </a>
-            </li>
-            <li>
-              <a href="/contact/">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a href="/index.xml/">
-                RSS Feed
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <header class="site-head" role="banner">
+  <div class="wrapper">
+    <div class="site-head__inner">
+      <a aria-label="rockyourcode - home" class="site-head__brand" href="/">
+        <svg focusable="false" width="50" height="50" xmlns="http://www.w3.org/2000/svg" class="icon"
+          viewBox="0 0 1024 1024">
+          <path fill=" #e5e9f0 "
+            d="M516 673c0 4.4 3.4 8 7.5 8h185c4.1.0 7.5-3.6 7.5-8v-48c0-4.4-3.4-8-7.5-8h-185c-4.1.0-7.5 3.6-7.5 8v48zm-194.9 6.1 192-161c3.8-3.2 3.8-9.1.0-12.3l-192-160.9A7.95 7.95.0 00308 351v62.7c0 2.4 1 4.6 2.9 6.1L420.7 512l-109.8 92.2a8.1 8.1.0 00-2.9 6.1V673c0 6.8 7.9 10.5 13.1 6.1zM880 112H144c-17.7.0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7.0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+          </path>
+        </svg>
+      </a>
+      <nav aria-label="Primary" class="[ nav ] site-head__nav font-sans">
+        <ul class="nav__list">
+          <li>
+            <a href="/blogs/">
+              Posts
+            </a>
+          </li>
+          <li>
+            <a aria-current="page" data-state="active" href="/projects/">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="/books/">
+              Books
+            </a>
+          </li>
+          <li>
+            <a href="/contact/">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a href="/index.xml/">
+              RSS Feed
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-  </header>
-
-  
-    
+  </div>
+</header>
+        
 
 <div class=" site-head">
-
-<h1 class="page-title headline">IDK</h1>
-<p>
-  <i>
-    <time datetime='2023-10-22'>
-      22 Oct 2023
-    </time>
-  </i>
-</p>
-    <!-- raw HTML omitted -->
-<pre><code>&lt;img src=&quot;http://loonix.in/blogs/test.jpg&quot; alt=&quot;IDK&quot; /&gt;
-</code></pre>
-<!-- raw HTML omitted -->
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quas soluta suscipit eligendi sint deserunt unde eos. Soluta temporibus eos, iste blanditiis vero sed maxime consectetur voluptates doloremque beatae, nostrum quod neque unde ullam ipsa. Ducimus praesentium magnam aut quos eligendi voluptas ipsa expedita aliquam, vero eos non ratione quis veritatis totam dolorem neque exercitationem iste blanditiis! Modi, temporibus asperiores distinctio corrupti mollitia voluptatibus. Explicabo repudiandae error dolor. A blanditiis nam debitis sed iste deserunt quae dolore doloremque nemo laboriosam praesentium ea possimus corrupti veritatis, odio error, iure provident, quod vitae est! Nulla aut, cupiditate incidunt molestiae mollitia tempore, ipsam iusto aliquid, odit earum optio. Rem aut dolore vel officiis fuga saepe praesentium dolores sunt. Consequuntur dolorem blanditiis beatae praesentium unde modi esse cupiditate voluptate facilis eos repellat cumque incidunt fugit saepe quis reiciendis soluta sit eius temporibus porro nemo, iure quasi. Dolore fugiat nam molestiae illo consequuntur esse eveniet facere corrupti eos, harum odio dolorem sapiente hic aliquam ullam modi omnis voluptatem eius laboriosam deleniti. Praesentium, vero blanditiis deleniti quas hic quidem facilis ipsa repellat aliquid ut dolorum laudantium consequuntur deserunt animi sequi, nihil sunt quis ea esse nemo nostrum maxime! Voluptate at numquam hic, quos laborum temporibus minus!</p>
-
-  <p>
     
-  </p>
-</div>
+    <h1 class="page-title headline">IDK</h1>
+        <div class="description">
+            
+            
+
+            <time datetime='2023-12-27'>December 27, 2023</time> . 
+            2 min read
+        </div>
+        <p>
+            
+            <a class="tag-button" href="https://loonix.in/tags/development/">Development</a>
+            
+            <a class="tag-button" href="https://loonix.in/tags/go/">Go</a>
+            
+            <a class="tag-button" href="https://loonix.in/tags/fast/">fast</a>
+            
+            <a class="tag-button" href="https://loonix.in/tags/blogging/">Blogging</a>
+            
+        </p>
+    
+    <content>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique harum eum perferendis veritatis accusamus modi ex ab libero vero. Incidunt at ullam a eaque tempora nesciunt. Hic magnam impedit voluptatum! Suscipit nulla odio quos numquam iure, delectus autem est fuga atque minus repellat neque explicabo ullam aut obcaecati ducimus, perspiciatis corporis dicta et corrupti nostrum id dolore. Adipisci soluta quo magnam totam alias error voluptatibus dolores, necessitatibus sapiente, incidunt natus, ex iusto tempora hic provident delectus quod numquam nostrum! Neque repellendus quae maiores provident, nam saepe ipsum hic. Quod fugit provident accusamus minus. Quam asperiores numquam inventore nam dolor, doloremque deleniti. Vel, corrupti. Odio a ad, illum rerum, itaque dolor autem iure numquam non ducimus sapiente 
 
 
-    <footer role="contentinfo" class="site-foot">
-    <div class="wrapper">
-      <p>
-          All content published under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Attribution-NonCommercial 4.0 International
-          </a>
-          <br>
-          <a href="https://github.com/bsach64/loonix.in">Source</a> under MPL-2.0 license
-        </a>
-        <br>
-        Site proudly generated using <a href="https://gohugo.io/">HUGO</a>
 
-      </p>
+
+  <img class="landscape" src="https://loonix.in/blogs/img/test.jpg" alt="Alt Text" />
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique harum eum perferendis veritatis accusamus modi ex ab libero vero. Incidunt at ullam a eaque tempora nesciunt. Hic magnam impedit voluptatum! Suscipit nulla odio quos numquam iure, delectus autem est fuga atque minus repellat neque explicabo ullam aut obcaecati ducimus, perspiciatis corporis dicta et corrupti nostrum id dolore. Adipisci soluta quo magnam totam alias error voluptatibus dolores, necessitatibus sapiente, incidunt natus, ex iusto tempora hic provident delectus quod numquam nostrum! Neque repellendus quae maiores provident, nam saepe ipsum hic. Quod fugit provident accusamus minus. Quam asperiores numquam inventore nam dolor, doloremque deleniti. Vel, corrupti. Odio a ad, illum rerum, itaque dolor autem iure numquam non ducimus sapiente fuga, porro voluptates voluptatibus nisi quisquam suscipit omnis! Nobis ullam fugiat mollitia praesentium consectetur corrupti sunt provident cumque, vitae quibusdam. Voluptatem voluptatum, molestias qui rem obcaecati quo ipsam reiciendis consectetur aut velit, maiores libero labore, provident eligendi dolores sunt perferendis id vel dicta? Tenetur illo neque maiores esse, vel consectetur ducimus necessitatibus, minus cum voluptatibus dolorem perferendis consequatur facere nemo recusandae repellat ea magni, iste libero obcaecati suscipit! Exercitationem perferendis, quaerat laborum sint ab fugit molestiae hic. Id nisi eveniet unde? Reiciendis, placeat saepe?</p>
+
+    </content>
     </div>
-  </footer>
+
+
+        <footer role="contentinfo" class="site-foot">
+  <div class="wrapper">
+    <p>
+      All content published under <a
+        href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Attribution-NonCommercial 4.0 International
+      </a>
+      <br>
+      <a href="https://github.com/bsach64/loonix.in">Source</a> under MPL-2.0 license
+      </a>
+      <br>
+      Site proudly generated using <a href="https://gohugo.io/">HUGO</a>
+      
+    </p>
+  </div>
+  
+  <script src="https://loonix.in/js/head.min.js"></script>
+</footer>
 
     </div>
 </body>
+
 </html>
