@@ -2,5 +2,6 @@
 {{$temp:= .Get 0}}
 {{ $imageSrc := printf "/blogs/img/%s" $temp}}
 {{ $altText := .Get 1 }}
+
   <img class="landscape" src="{{ $imageSrc | absURL }}" alt="{{ $altText }}" />
 <!--image -->

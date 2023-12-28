@@ -1,12 +1,22 @@
 @font-face {
     font-family: "GT Walsheim Pro Medium Regular";
-    src: url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.eot");
     src: url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.eot?#iefix")format("embedded-opentype"),
     url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.svg#GT Walsheim Pro Medium Regular")format("svg");
 }
+
+@font-face {
+    font-family: "GT Walsheim Pro Regular";
+    src: url("https://db.onlinewebfonts.com/t/a517c7e0daa786f2dae4afeb9ef0ac4f.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a517c7e0daa786f2dae4afeb9ef0ac4f.woff2")format("woff2"),
+}
+
+:root{
+    --main-bg:#2e3440;
+    --primary: #e5e9f0;
+    --secondary:rgba(235, 203, 139, .95);
+    --flow-space: 1.77rem;
+}
+
 @font-face {
     font-family: epilogue;
     font-style: normal;
@@ -55,10 +65,6 @@ html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --flow-space: 1.77rem;
-}
-
 body {
     --dot-shadow-size: 0.75rem;
     --flow-space: 0.75rem;
@@ -66,9 +72,9 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    background: #2e3440;
+    background: var(--main-bg);
 
-    color: #e5e9f0;
+    color: var(--primary);
     font-size: 1.33rem;
     font-family: "GT Walsheim Pro Medium Regular";
 }
@@ -82,8 +88,8 @@ body {
 }
 
 .post-header .meta .date {
-    margin-right: 19px;
-    width: 75px;
+    margin-right: 1rem;
+    width: auto;
     text-align: center;
 }
 
@@ -93,9 +99,9 @@ body {
     line-height: 70%;
     font-size: 3em;
     display: block;
-    margin-top: 1rem;
-    margin-bottom: 1.25rem;
-    color: rgba(235, 203, 139, .95);
+    margin-top: 0.75rem;
+    margin-bottom: 1.05rem;
+    color: var(--secondary);
 }
 
 .post-header .meta .date .rest {
@@ -103,11 +109,6 @@ body {
     font-size: 0.80em;
 }
 
-.post-header h1.title {
-    margin: -10px 0 0 0;
-
-    font-weight: bold;
-}
 
 .markdown {
     overflow: hidden;
@@ -115,16 +116,8 @@ body {
 
 .post .title.small {
     margin: 0;
-
 }
 
-.post .draft-label {
-    color: var(--bq-color);
-    text-decoration: underline;
-    padding: 2px 4px;
-    margin-left: 6px;
-    font-size: 1.4rem;
-}
 
 .post .tags a {
     display: inline-block;
@@ -137,13 +130,6 @@ body {
     margin: 0 10px 0 0;
 }
 
-.tags p {
-    margin: 10px 0 10px 0;
-}
-
-.post .tags a:hover {
-    border: 1px solid var(--bg-color);
-}
 
 .post ul li {
     margin-bottom: 10px;
@@ -166,34 +152,28 @@ body {
 
 
 .description {
+    color: #a2a6ac;
     margin: 0;
     font-size:medium;
 }
 
-
-*,
-:before,
-:after {
-    box-sizing: border-box;
-}
 
 :selection {
     color: #e5e9f0;
 }
 
 ::-webkit-scrollbar {
-    height: 1rem;
-    width: 0.75rem;
+    width: 0.35rem;
 }
+
 
 ::-webkit-scrollbar-thumb {
     background-color: #787f90;
-    border-radius: 2rem;
+    border-radius: 0.125rem;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent;
-    border-radius: .25rem;
+    border-radius: 0.125rem;
 }
 
 .site-wrap {
@@ -226,6 +206,11 @@ body {
     padding-block: 2rem;
 }
 
+content{
+    text-align: justify;
+}
+
+
 .site-head__inner {
     display: flex;
     flex-wrap: wrap;
@@ -243,37 +228,45 @@ body {
     border-radius: 0.5rem;
 }
 
+.tag-button {
+    display: inline-block;
+    padding: 0.1rem 0.3rem; 
+    font-size: 1rem; 
+    text-align: center;
+    color: rgba(235,203,139,.95);
+    text-decoration: none;
+    background-color: #404857;
+    border-radius: 0.5rem; 
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .tag-button:hover {
+    background-color: #949494;
+    color: #ffffff;
+  }
+
 
 .landscape{
-    border: 1px #ccc; /* Optional: Add a border for visualization */
-    max-width: 100%; /* Set the image width to 100% of its container */
-    height: auto; /* Maintain the aspect ratio of the image */
-    /* Remove any default spacing */       
-    margin: auto; 
+    border: 0.2rem solid  #ccc;
+    max-width: 100%; 
+    height: auto; 
     overflow: hidden;
-    display: block;
-    object-fit: scale-down;
+    float:inline-end;
+    margin: 1rem 2rem 0rem 2rem;
 }
 
 .cropped-image-container {
     margin-block-start: 1rem;
     overflow: hidden;
-    /* Hide any overflow content */
     position: relative;
-    /* Position relative for absolute positioning */
     height: 0;
-    /* Set height to 0 to maintain the aspect ratio */
     padding-bottom: 25%;
-    /* 4:1 aspect ratio (4 / 1) * 100% */
 }
 
 .cropped-image {
     margin: 0;
-    /* Remove any default margins */
     padding: 0;
-    /* Remove any default padding */
     overflow: hidden;
-    /* Hide any overflow content */
 }
 
 .cropped-image img {
@@ -297,8 +290,6 @@ body {
 
 .bg-tertiary {
     background: #39404d;
-
-
 }
 
 .bg-tertiary h2 {
@@ -433,6 +424,7 @@ h2 {
     line-height: 1.1;
 }
 
+
 .page-content>* {
     max-width: 65ch;
 }
@@ -459,6 +451,7 @@ h2 {
     padding-inline-start: 1rem;
 }
 
+/* Links masti*/
 .nav a {
 
     display: block;
@@ -470,6 +463,9 @@ a {
     color: #88c0d0;
     font-weight: bold;
 }
+/********************/
+
+
 
 .nav a[data-state="active"]::before,
 .nav a[aria-current="page"]::before {
