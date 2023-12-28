@@ -1,8 +1,7 @@
-baseURL = 'http://loonix.in/'
+baseURL = 'https://loonix.in/'
 languageCode = 'en-us'
 title = 'Loonix Ji'
 tableOfContents = true
-
 [outputs]
  home = ['html', 'rss']
   section = ['html', 'rss']
@@ -12,4 +11,5 @@ tableOfContents = true
 
     noClasses = false
     lineNumbersInTable = true
+
 

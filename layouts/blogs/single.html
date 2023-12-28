@@ -1,19 +1,23 @@
 {{- define "main" }}
 
 <div class=" site-head">
-
+    
     <h1 class="page-title headline">{{ .Title }}</h1>
-        <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFormat) }}</time>
         <div class="description">
-            {{ .Description }} 
+            {{ $readTime := mul (div (countwords .Content) 150.0) 60 }}
+            {{ $minutes := math.Floor (div $readTime 60) }}
+
+            <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "January 2, 2006" .Site.Params.dateFormat) }}</time> . 
+            {{ $minutes }} min read
         </div>
+        <p>
+            {{ range (.GetTerms "tags") }}
+            <a class="tag-button" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            {{end}}
+        </p>
+    
     <content>
         {{ .Content }}
     </content>
-    <p>
-        {{ range (.GetTerms "tags") }}
-        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-        {{end}}
-    </p>
-</div>
+    </div>
 {{end}}

@@ -2,7 +2,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/loonix.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/loonix.svg">
     <link rel="icon" type="image/png" sizes="16x16" href="/loonix.svg">
-    <link rel="manifest" href="/site.webmanifest">
     {{ $styles := resources.Get "css/syntax.css" | minify }} 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     <title>Loonix | {{.Page.Title}}</title>
