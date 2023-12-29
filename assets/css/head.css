@@ -80,7 +80,7 @@ body {
 }
 
 .flat .post {
-    margin-bottom: 45px;
+    margin-bottom: 2rem;
 }
 
 .post-header {
@@ -119,18 +119,6 @@ body {
 }
 
 
-.post .tags a {
-    display: inline-block;
-    border: 1px solid;
-    border-radius: 3px;
-    padding: 0px 6px;
-    line-height: 20px;
-    font-size: 0.85em;
-    text-decoration: none;
-    margin: 0 10px 0 0;
-}
-
-
 .post ul li {
     margin-bottom: 10px;
 }
@@ -141,13 +129,6 @@ body {
 
 .list .posts .post-header .meta {
     margin-bottom: 20;
-}
-
-.post-meta {
-    color: var(--hover-color);
-    font-size: 14px;
-    font-style: italic;
-    margin: 0 0 10px;
 }
 
 
@@ -365,11 +346,6 @@ content{
     max-width: 6rem;
 }
 
-@media (min-width: 37em) {
-    .site-head__brand svg {
-	width: 160px;
-    }
-}
 
 .nav__list {
     display: flex;
@@ -398,9 +374,9 @@ h3 {
     max-width: 18ch;
 }
 
-@media (min-width: 37em) {
+@media (min-width: 1100px) {
     .headline {
-	font-size: 3.15rem;
+	    font-size: 3.15rem;
     }
 }
 
