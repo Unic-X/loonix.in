@@ -10,7 +10,7 @@
 
     <main tabindex="-1">
       <article>
-        <div class="[ page-header ] bg-light-glare">
+        <div class="bg-light-glare">
           <div class="[ wrapper ] flow">
             <h1 class="[ page-header__heading ] headline">
               About</h1>
@@ -50,7 +50,21 @@
 
 
     </main>
-    {{partial "footer.html" .}}
+    <footer role="contentinfo" id="index-page" class="site-foot">
+      <p>
+        All content published under <a
+          href="https://creativecommons.org/licenses/by-nc/4.0/deed.en">Attribution-NonCommercial 4.0 International
+        </a>
+        <br>
+        <a href="https://github.com/bsach64/loonix.in">Source</a> under MPL-2.0 license
+        </a>
+        <br>
+        Site proudly generated using <a href="https://gohugo.io/">HUGO</a>
+        
+      </p>
+    {{$script:= resources.Get "js/head.js"| minify}}
+    <script src="{{$script.Permalink}}"></script>
+  </footer>
   </div>
 
 </body>

@@ -1,50 +1,49 @@
 {{- define "main" }}
-{{- if .Page.Title }}
-<div class=" site-head">
-
-  <h1 class="page-title headline">{{ .Page.Title }}</h1>
+  {{- if .Page.Title }}
+  <div class="wrapper">
+    <h1 class="page-title headline">{{ .Page.Title }}</h1>
   {{- else if isset .Data "Term" }}
   <h1 class="page-title">{{ humanize .Data.Term }}</h1>
   {{- end -}}
   {{ .Content }}
 
-<ul class="posts flat">
-  {{- range .Data.Pages }}
+  <ul class="posts flat">
+    {{- range .Data.Pages }}
 
-  {{- if (in .Site.Params.excludedTypes .Type) }}
+    {{- if (in .Site.Params.excludedTypes .Type) }}
 
-  {{- else }}
+    {{- else }}
 
-  <li class="post">
-    
-    <div class="bg-light-glare-blog ">
+    <li class="post">
+      
+      <div class="bg-light-glare-blog ">
 
-      <div class="post-header">
-        <div class="meta">
-          <div class="date">
-            <span class="day">{{ dateFormat "02" .Date }}</span>
-            <span class="rest">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{.Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+        <div class="post-header">
+          <div class="meta">
+            <div class="date">
+              <span class="day">{{ dateFormat "02" .Date }}</span>
+              <span class="rest">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{.Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+            </div>
+          </div>
+          <div class="matter">
+            <article>
+              <h3 class="title small"><a href="{{ .RelPermalink }}">{{.Title}}</a></h3>
+                {{- if not .Params.hidemeta }}
+                {{- end }}
+              <div>
+                {{ range (.GetTerms "tags") }}
+                <a class="tag-button" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+                {{end}}
+              </div>
+              <span style="font-size: medium;">{{ if isset .Params "description" }}{{ .Description }}{{ end }}</span>
+            </article>
           </div>
         </div>
-        <div class="matter">
-          <article>
-            <h3 class="title small"><a href="{{ .RelPermalink }}">{{.Title}}</a></h3>
-              {{- if not .Params.hidemeta }}
-              {{- end }}
-            <div>
-              {{ range (.GetTerms "tags") }}
-              <a class="tag-button" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-              {{end}}
-            </div>
-            <span style="font-size: medium;">{{ if isset .Params "description" }}{{ .Description }}{{ end }}</span>
-          </article>
-        </div>
       </div>
-    </div>
-  </li>
-  {{- end }}
-  {{- end }}
-</ul>
+    </li>
+    {{- end }}
+    {{- end }}
+  </ul>
 </div>
 
 </div>
