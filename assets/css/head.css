@@ -141,7 +141,7 @@ body {
 
 
 ::selection {
-    color: #e5e9f0;
+    color: var(--main-bg);
     background-color: var(--secondary);
 }
 
