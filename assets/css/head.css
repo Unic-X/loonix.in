@@ -16,13 +16,8 @@
     --secondary:rgba(235, 203, 139, .95);
     --tertiary: #c1c2c4;
     --flow-space: 1.77rem;
-}
+    --glare:#39404d;
 
-@font-face {
-    font-family: epilogue;
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXMDPiDA.ttf)format("truetype");
 }
 
 @font-face {
@@ -30,20 +25,6 @@
     font-style: normal;
     font-weight: 900;
     src: url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXmTTiDA.ttf)format("truetype");
-}
-
-@font-face {
-    font-family: literata;
-    font-style: italic;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/literata/v23/or3NQ6P12-iJxAIgLYT1PLs1Zd0nfUwAbeGVKoRYzNiCp1OUedn8_7XWSQ.ttf)format("truetype");
-}
-
-@font-face {
-    font-family: literata;
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/literata/v23/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbBG_F_Y.ttf)format("truetype");
 }
 
 @font-face {
@@ -463,4 +444,44 @@ a {
     left: 0;
     margin-top: .25rem;
     background: #bf616a;
+}
+
+
+/*Projects*/
+
+.grid-list{
+    justify-items: center;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 1.5rem;
+}
+
+h5{
+    margin: 0;
+}
+
+.card{
+    overflow: hidden;
+    background-color: var(--glare);
+    border-radius: 0.35rem;
+    max-width: 24rem;
+}
+
+.card section {
+    padding: 1.25rem;
+}
+
+.card section p{
+    margin: 0;
+}
+
+
+img{
+    max-width: 100%;
+}
+
+
+.card:hover{
+    scale: 105%;
 }

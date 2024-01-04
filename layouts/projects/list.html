@@ -1,0 +1,23 @@
+{{- define "main" }}
+  {{- if .Page.Title }}
+  <div class="wrapper">
+    <h1 class="page-title headline">{{ .Page.Title }}</h1>
+  {{- else if isset .Data "Term" }}
+  <h1 class="page-title">{{ humanize .Data.Term }}</h1>
+  {{- end -}}
+  {{ .Content }}
+  
+    <h3>Completed :</h3>
+
+  <ul class="grid-list">
+    {{ range where .Pages.ByLastmod.Reverse "Params.completed" "!=" "true"   }}
+        <li>
+          {{$temp:= .Title}}
+          {{ $img := (printf "/projects/img/%s.jpg" $temp ) }}
+          {{ partial "card" (dict "context" . "img" $img) }}
+        </li>
+    {{ end }} 
+  </ul>
+
+</div>
+{{- end }}

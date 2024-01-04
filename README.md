@@ -37,7 +37,7 @@ Once your website is ready to be made public, run `hugo` in the terminal from th
 
 
 ## Release
-TODO
+The website can be viewed [here](https://loonix.in)
 
 ## License
 
