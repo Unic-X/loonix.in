@@ -7,7 +7,7 @@
   {{- end -}}
   {{ .Content }}
   
-    <h3>Completed :</h3>
+    <h3>Current Projects :</h3>
 
   <ul class="grid-list">
     {{ range where .Pages.ByLastmod.Reverse "Params.completed" "!=" "true"   }}
@@ -18,6 +18,22 @@
         </li>
     {{ end }} 
   </ul>
+
+  <br>
+
+
+  <h3>Completed Projects :</h3>
+
+  <ul class="grid-list">
+    {{ range where .Pages.ByLastmod.Reverse "Params.completed" true }}
+        <li>
+          {{$temp:= .Title}}
+          {{ $img := (printf "/projects/img/%s.jpg" $temp ) }}
+          {{ partial "card" (dict "context" . "img" $img) }}
+        </li>
+    {{ end }} 
+  </ul>
+
 
 </div>
 {{- end }}

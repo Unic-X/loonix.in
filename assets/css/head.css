@@ -6,9 +6,10 @@
 
 @font-face {
     font-family: "GT Walsheim Pro Regular";
-    src: url("https://db.onlinewebfonts.com/t/a517c7e0daa786f2dae4afeb9ef0ac4f.eot?#iefix")format("embedded-opentype"),
+    src: local("GT Walsheim Pro Regular"),url("https://db.onlinewebfonts.com/t/a517c7e0daa786f2dae4afeb9ef0ac4f.eot?#iefix")format("embedded-opentype"),
     url("https://db.onlinewebfonts.com/t/a517c7e0daa786f2dae4afeb9ef0ac4f.woff2")format("woff2"),
 }
+
 
 :root{
     --main-bg:#2e3440;
@@ -25,13 +26,6 @@
     font-style: normal;
     font-weight: 900;
     src: url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXmTTiDA.ttf)format("truetype");
-}
-
-@font-face {
-    font-family: literata;
-    font-style: normal;
-    font-weight: 700;
-    src: url(https://fonts.gstatic.com/s/literata/v23/or3PQ6P12-iJxAIgLa78DkrbXsDgk0oVDaDPYLanFLHpPf2TbPa4F_Y.ttf)format("truetype");
 }
 
 .matter{
@@ -429,6 +423,8 @@ a {
     text-decoration: none;
     color: #88c0d0;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 /********************/
 
@@ -459,12 +455,14 @@ a {
 
 h5{
     margin: 0;
+    font-size: 1.25rem;
+    font-family: epilogue;
 }
 
 .card{
     overflow: hidden;
     background-color: var(--glare);
-    border-radius: 0.35rem;
+    border-radius: 0.6rem;
     max-width: 24rem;
 }
 
@@ -476,6 +474,9 @@ h5{
     margin: 0;
 }
 
+.tags{
+    padding-top: 1rem;
+}
 
 img{
     max-width: 100%;

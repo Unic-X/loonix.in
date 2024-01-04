@@ -7,11 +7,15 @@
 
         <section class="card-s">
                 <h5>{{ .context.Title }}</h5>
-                <p>{{ .context.Description }}</p>
-                {{ range .context.Params.tags }}
-                <a class="tag-button">{{ . }}</a>
+                <p class="description">{{ .context.Description }}</p>
+                
 
-                {{ end }}
+                <div class="tags">
+                    {{ range .context.Params.tags }}
+                    <a class="tag-button">{{ . }}</a>
+                    {{ end }}
+                </div>
+                
         </section>
     </a>
 </article>

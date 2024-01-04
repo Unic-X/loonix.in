@@ -3,7 +3,3 @@ resources/
 .hugo_build.lock
 
 public/
-
-*.png
-*.jpg
-*.svg
