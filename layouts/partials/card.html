@@ -1,9 +1,9 @@
 <article class="card">
     <a href="{{ .context.RelPermalink }}" class="no-underline">
 
-        {{ $img := .img }}
+        {{ $img := .context.Params.img }}
         
-        <img src="{{ $img }}" alt="{{ .context.Title }}">
+        <img src="{{.path}}/{{ $img }}" alt="{{ .context.Title }}">
 
         <section class="card-s">
                 <h5>{{ .context.Title }}</h5>
@@ -12,7 +12,7 @@
 
                 <div class="tags">
                     {{ range .context.Params.tags }}
-                    <a class="tag-button">{{ . }}</a>
+                    <div class="tag-button">{{ . }}</div>
                     {{ end }}
                 </div>
                 

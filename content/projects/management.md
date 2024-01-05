@@ -1,10 +1,12 @@
 ---
 title : Management-System
-description: Employee management system written in python and has gui for ease of use
+description: Python GUI-based Employee Management System.
 tags:
     - python
     - sql
     - tkinter
+
+img: management.jpg
 
 completed: true
 

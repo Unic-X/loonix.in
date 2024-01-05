@@ -464,6 +464,9 @@ h5{
     background-color: var(--glare);
     border-radius: 0.6rem;
     max-width: 24rem;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms;
 }
 
 .card section {
@@ -484,5 +487,5 @@ img{
 
 
 .card:hover{
-    scale: 105%;
+    transform: scale(105%);
 }
