@@ -9,6 +9,8 @@ tags:
 img: management.jpg
 
 completed: true
+date : 2022-12-31
 
 ---
+
 
