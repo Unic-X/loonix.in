@@ -459,6 +459,22 @@ h5{
     font-family: epilogue;
 }
 
+code{
+    border-radius: 0.3rem;
+    border-color: #ccc;
+    background-color:#bf616a;
+}
+
+.highlight-wrapper{
+    position: relative;
+}
+
+.copy-code-button{
+    position: absolute;
+    right: 0;
+    margin: 0.5rem;
+}
+
 
 h4{
     margin: 0;
