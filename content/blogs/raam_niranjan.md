@@ -3,6 +3,7 @@ title : Mystic Song by Kabir
 date: 2024-01-14
 description: Exploring the Profound Notion of Tainted Realities, and a Deeper Understanding of the Divine
 tags : ["Random"]
+author: Unic-X
 ---
 ## राम निरंजन न्यारा रे : 
 Here's a verse from kabir nirguni bhajan sung by Pt. Kumar Gandharva in a sort of thumri style.
