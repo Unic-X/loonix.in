@@ -472,7 +472,12 @@ code{
 .copy-code-button{
     position: absolute;
     right: 0;
+    padding: 0.5rem;
     margin: 0.5rem;
+    border: none;
+    color: #c1c2c4;
+    border-radius: 0.25rem;
+    background-color: #404857;
 }
 
 

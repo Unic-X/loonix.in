@@ -8,7 +8,9 @@
             {{ $minutes := math.Floor (div $readTime 60) }}
 
             <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "January 2, 2006" .Site.Params.dateFormat) }}</time> . 
-            {{ $minutes }} min read
+            {{ $minutes }} min read .
+
+            {{title (.Params.author) }}
         </div>
         <p>
             {{ range (.GetTerms "tags") }}

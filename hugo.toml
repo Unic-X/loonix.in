@@ -13,3 +13,5 @@ tableOfContents = true
     lineNumbersInTable = true
 
 
+[markup.goldmark.renderer]
+  unsafe= true
