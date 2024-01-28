@@ -463,6 +463,34 @@ code:not([class]){
     font-size: 1rem;
 }
 
+blockquote{
+    margin-inline-start:0%;
+    font-family:Open Sans;
+    font-style:italic;
+    color: var(--primary);
+    padding:0.5em 1em ;
+    width: 100%;
+    border-left:0.5rem solid var(--secondary) ;
+    line-height:1.6;
+    background:var(--glare);
+  }
+  
+  blockquote::before{
+    font-family:Arial;
+    color:#707070;
+    font-size:4em;
+    position: absolute;
+  }
+
+  
+  blockquote span{
+    display:block;
+    color:#333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top:1em;
+  }
+
 .highlight-wrapper{
     position: relative;
 }
