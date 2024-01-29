@@ -2,7 +2,7 @@
 {{$temp:= .Get 0}}
 {{ $imageSrc := printf "/blogs/img/%s" $temp}}
 {{ $altText := .Get 1 }}
-<div class="cropped-image-container">
+<div>
   <figure class="cropped-image">
     <img src="{{ $imageSrc | absURL }}" alt="{{ $altText }}" />
   </figure>

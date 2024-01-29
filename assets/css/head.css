@@ -218,6 +218,7 @@ content{
     border: 0.2rem solid  #ccc;
     max-width: 100%; 
     height: auto; 
+    overflow-clip-margin: unset;
     overflow: hidden;
     float:inline-end;
     margin: 1rem 2rem 0rem 2rem;
@@ -226,7 +227,7 @@ content{
 .cropped-image-container {
     margin-block-start: 1rem;
     overflow: hidden;
-    position: relative;
+    
     height: 0;
     padding-bottom: 25%;
 }
@@ -234,22 +235,15 @@ content{
 .cropped-image {
     margin: 0;
     padding: 0;
+    position: relative;
+    height: 100%;
     overflow: hidden;
 }
 
 .cropped-image img {
-    position: absolute;
     /* Position absolute for precise positioning */
-    top: 0;
-    /* Position at the top */
-    left: 0;
-    /* Position at the left */
-    width: 100%;
-    /* Make the image cover the entire width */
-    height: 100%;
     /* Make the image cover the entire height (equal to the container's height) */
-    object-fit: cover;
-    /* Crop the image to cover the figure element */
+    object-fit:contain;
 }
 
 .page-header {
@@ -464,14 +458,15 @@ code:not([class]){
 }
 
 blockquote{
-    margin-inline-start:0%;
+    margin-inline-start:unset;
+    margin-inline-end:unset;
+
     font-family:Open Sans;
     font-style:italic;
     color: var(--primary);
     padding:0.5em 1em ;
     width: 100%;
     border-left:0.5rem solid var(--secondary) ;
-    line-height:1.6;
     background:var(--glare);
   }
   

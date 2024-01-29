@@ -146,3 +146,11 @@ output.icecast(%mp3,
 and run this using `sudo liquidsoap --quiet config.liq` this will make liquidsoap run in background. 
 
 And now you have a working web-radio!
+
+
+
+## Update: I hate AWS too
+
+Why the free tier only allows usage of only 1GB of outbound data also if you exceed they charge $0.09/GB that might get exhausted pretty 
+fast if you stream a radio so its more preferable to use a OCI instance instead of AWS because they allow for 10TB outbound data / month. But what is with these Amazon/Azure/Google cloud services why can't they make something like Oracle ?? Absolute state of money hungry tech giants.
+{{<cover-image "aws.png" "Alt Text">}}
