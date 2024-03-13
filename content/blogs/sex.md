@@ -1,3 +1,13 @@
+---
+title : I had asex
+date : 2024-01-28
+description: A tutorial on how to setup sex using liquidsoap and icecast in 2024  
+author: Unic-X 
+tags: ['Rant', 'Web-Radio', 'LiquidSoap', 'Icecast']
+
+---
+
+
 i had sex today :) 
 
 
