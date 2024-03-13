@@ -1,6 +1,6 @@
 ---
 title : Angels & Demons
-image : wow2.jpg
+img : wow2.jpg
 alt: MY FAV
 ---
 

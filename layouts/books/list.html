@@ -1,46 +1,36 @@
 {{- define "main" }}
-{{- if .Page.Title }}
-
-<div class="wrapper">
-  <div class="b_wrap">
-
+  {{- if .Page.Title }}
+  <div class="wrapper">
     <h1 class="page-title headline">{{ .Page.Title }}</h1>
-    {{- else if isset .Data "Term" }}
-    <h1 class="page-title">{{ humanize .Data.Term }}</h1>
-    {{- end -}}
-    {{ .Content }}
+  {{- else if isset .Data "Term" }}
+  <h1 class="page-title">{{ humanize .Data.Term }}</h1>
+  {{- end -}}
+  {{ .Content }}
+  
+    <h3>Already Read:</h3>
 
-<div>
-  <ul class="posts flat">
-    {{- range .Data.Pages }}
-
-    {{- if (in .Site.Params.excludedTypes .Type) }}
-
-    {{- else }}
-    
-    <li class="post">
-      <div class="bg-light-glare-blog">
-        <div class="books">
-          {{ $img := .Params.image }}
-          {{ $asset := resources.Get $img }}
-          {{ $resize := $asset.Fit "235x300"}}
-          <img src="{{ $resize.RelPermalink }}" alt="{{ .Params.alt }}">
-          <p> 
-            <div class="matter">
-              <article>
-              <h3 class="title small"><a href="{{ .RelPermalink }}">{{.Title}}</a></h3> 
-                {{- if not .Params.hidemeta }}
-                <p class="post-meta"></p>
-                {{- end }}
-              <span class="description">{{ if isset .Params "description"}}{{ .Description}}{{ else }}{{ .Plain | htmlUnescape | safeHTML | truncate 140 }}{{ end }}</span>
-              </article>
-            </div>
-          </p>
-        </div>
-      </div>
-    </li>
-    {{- end }}
-    {{- end }}
+  <ul class="grid-list">
+    {{ range where .Pages.ByLastmod.Reverse "Params.completed" "!=" "true"   }}
+        <li class="books">
+          {{ partial "card" (dict "context" . "path" "img") }}
+        </li>
+    {{ end }} 
   </ul>
-</div> 
+
+  <br>
+
+
+  <h3>Still Reading :</h3>
+
+  <ul class="grid-list">
+    {{ range where .Pages.ByLastmod.Reverse "Params.completed" true }}
+        <li class="books">
+          {{ partial "card" (dict "context" . "path" "img") }}
+        </li>
+    {{ end }} 
+  </ul>
+  
+
+
+</div>
 {{- end }}

@@ -1,6 +1,6 @@
 ---
 title : The Da Vinci Code
-image : wow.jpg
+img : wow.jpg
 alt : THE GREATEST AUTHOR EVER
 ---
 
