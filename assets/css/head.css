@@ -11,6 +11,7 @@
 }
 
 
+
 :root{
     --main-bg:#2e3440;
     --primary: #e5e9f0;
@@ -18,6 +19,8 @@
     --tertiary: #c1c2c4;
     --flow-space: 1.77rem;
     --glare:#39404d;
+    --dot-shadow-size: 0.75rem;
+    --flow-space: 0.75rem;
 
 }
 
@@ -42,8 +45,7 @@ html {
 }
 
 body {
-    --dot-shadow-size: 0.75rem;
-    --flow-space: 0.75rem;
+    
     margin: 0;
     min-height: 100vh;
     text-rendering: optimizeSpeed;
@@ -270,7 +272,7 @@ content{
 
 @media (min-width: 37em) {
     .panel {
-	margin: 3.15rem 0;
+	    margin: 3.15rem 0;
     }
 }
 
@@ -353,11 +355,6 @@ h3 {
     max-width: 18ch;
 }
 
-@media (min-width: 1100px) {
-    .headline {
-	    font-size: 3.15rem;
-    }
-}
 
 .headline:after {
     content: '.';
@@ -539,4 +536,48 @@ img{
 
 .card:hover{
     transform: scale(105%);
+}
+
+
+
+@media (max-width: 1100px) {
+    .headline {
+	    font-size: 3.15rem;
+    }
+
+    * {
+        font-size: 40px;
+    }
+    
+    footer p, footer p a{
+        font-size: 20px;
+    }
+
+    article span {
+        font-size: 30px;
+    }
+
+    .dot-shadow{
+        --dot-shadow-size:0;
+    }
+
+    .grid-list {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .grid-list img {
+        min-width: 100%;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0.1rem;
+    }
+
+}
+
+@media (min-width: 1100px){
+    article span {
+        font-size: medium;
+    } 
 }
