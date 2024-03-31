@@ -295,11 +295,6 @@ content{
     border-radius: .25rem;
 }
 
-.site-head__brand {
-    flex-shrink: 0;
-    margin-inline-end: 1.77rem;
-}
-
 .font-sans {
     font-family: epilogue, segoe ui, Roboto, helvetica neue, Arial, sans-serif;
 }
@@ -401,9 +396,7 @@ h2 {
 
 /* Links masti*/
 .nav a {
-
-    display: block;
-    position: relative;
+    display: flex;
 }
 
 a {
@@ -537,13 +530,68 @@ img{
 .card:hover{
     transform: scale(105%);
 }
+/*Code for Hamburger menu*/
 
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    display: none;
+}
 
 
 @media (max-width: 1100px) {
     .headline {
 	    font-size: 3.15rem;
     }
+
+    .nav {
+        display: contents;
+        flex-direction: column;
+    }
+
+    .toggle-button .bar{
+        display: flex;
+    }
+
+    .nav__list a,.nav__list{
+        display: none;
+    }
+    
+    .icon {
+        height: 80px;
+        width: 80px;
+    }
+
+    .nav__list {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav__list li {
+        text-align: center;
+    }
+
+    .nav__list.active a {
+        justify-content: center;
+        display: flex;
+    }
+
+    .nav__list.active {
+        display: unset;
+    }
+      
 
     * {
         font-size: 40px;
@@ -558,6 +606,7 @@ img{
     }
 
     .dot-shadow{
+        margin-bottom: 0;
         --dot-shadow-size:0;
     }
 
