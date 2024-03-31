@@ -1,13 +1,11 @@
 @font-face {
     font-family: "GT Walsheim Pro Medium Regular";
-    src: url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/d4f20dfedfdf197ed0ac52b09bf25551.woff2")format("woff2"),
+    src: url("/fonts/GT_Walsheim_Pro_Medium_Regular.woff2")format("woff2"),
 }
 
 @font-face {
     font-family: "GT Walsheim Pro Regular";
-    src: local("GT Walsheim Pro Regular"),url("https://db.onlinewebfonts.com/t/a517c7e0daa786f2dae4afeb9ef0ac4f.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/a517c7e0daa786f2dae4afeb9ef0ac4f.woff2")format("woff2"),
+    src: url("/fonts/GT_Walsheim_Pro_Regular.woff2")format("woff2"),
 }
 
 
