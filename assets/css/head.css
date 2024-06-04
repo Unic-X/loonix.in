@@ -548,6 +548,32 @@ img{
     display: none;
 }
 
+.meter {
+    box-sizing: content-box;
+    height: 0.6em;
+    position: relative;
+    margin: 1.5em 0 1em;
+    background: var(--main-bg);
+    border-radius: 25px;
+  }
+
+
+
+.meter > span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: var(--secondary);
+    overflow: hidden;
+  }
+
+
+.comp_percent{
+    font-size: 0.75em;
+}
 
 @media (max-width: 1100px) {
     .headline {
@@ -628,3 +654,4 @@ img{
         font-size: medium;
     } 
 }
+

@@ -15,6 +15,11 @@
                     <div class="tag-button">{{ . }}</div>
                     {{ end }}
                 </div>
+
+                {{ $comp := .context.Params.read }}
+                {{ with $comp }}
+                <div class="meter"><span style="width: {{ . }}%"></span></div>
+                {{ end }}
                 
         </section>
     </a>
