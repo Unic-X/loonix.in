@@ -1,0 +1,25 @@
+{{- define "main" }}
+
+<div class="wrapper">
+    
+    <h1 class="page-title headline">{{ .Title }}</h1>
+        <div class="description">
+            {{ $readTime := mul (div (countwords .Content) 150.0) 60 }}
+            {{ $minutes := math.Floor (div $readTime 60) }}
+
+            <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date.Format (default "January 2, 2006" .Site.Params.dateFormat) }}</time> . 
+            {{ $minutes }} min read .
+
+            {{title (.Params.author) }}
+        </div>
+        <p>
+            {{ range (.GetTerms "tags") }}
+            <a class="tag-button" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            {{end}}
+        </p>
+    
+    <content>
+        {{ .Content }}
+    </content>
+    </div>
+{{end}}

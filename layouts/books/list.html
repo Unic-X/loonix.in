@@ -10,7 +10,7 @@
     <h3>Already Read:</h3>
 
   <ul class="grid-list">
-    {{ range where .Pages.ByLastmod.Reverse "Params.completed" "!=" "true"   }}
+    {{ range where .Pages.ByLastmod.Reverse "Params.reading" "!=" "true"   }}
         <li class="books">
           {{ partial "card" (dict "context" . "path" "img") }}
         </li>
@@ -23,7 +23,7 @@
   <h3>Still Reading :</h3>
 
   <ul class="grid-list">
-    {{ range where .Pages.ByLastmod.Reverse "Params.completed" true }}
+    {{ range where .Pages.ByLastmod.Reverse "Params.reading" true }}
         <li class="books">
           {{ partial "card" (dict "context" . "path" "img") }}
         </li>
