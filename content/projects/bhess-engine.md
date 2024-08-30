@@ -10,7 +10,7 @@ date : 2023-12-16
 Source code at [Github](https://github.com/Unic-X/Bhess-Engine)
 
 ### Current Development Status:
-1. Bitboard [X]
+1. Bitboard [x]
 1. Piece Masking [x]
 1. Move Generation [x]
 1. Magic Numbers [x] 
