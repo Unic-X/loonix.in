@@ -9,6 +9,8 @@
         faviconElem.setAttribute('href',`./loonix${Math.floor(6*Math.random())+1}.svg`);
     </script>
 
+    {{partial "meta"}}
+
     {{ $styles := resources.Get "css/syntax.css" | minify }} 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
     <title>Loonix | {{.Page.Title}}</title>
