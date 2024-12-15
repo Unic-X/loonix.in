@@ -1,4 +1,4 @@
-baseURL = 'https://loonix.in/'
+baseURL = "https://hugo.loonix.in/"
 languageCode = 'en-us'
 title = 'Loonix Ji'
 tableOfContents = true
