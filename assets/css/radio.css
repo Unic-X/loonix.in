@@ -1,0 +1,33 @@
+
+.radio-container {
+    padding: 20px;
+}
+
+
+.player {
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.btn:hover {
+    background-color: #e85b50;
+}
+
+.track-info {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+#artist-name, #song-title {
+    margin: 5px 0;
+}

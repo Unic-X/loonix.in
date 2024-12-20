@@ -8,6 +8,7 @@
         let faviconElem2 = document.getElementById('favicon2');
         faviconElem.setAttribute('href',`./loonix${Math.floor(6*Math.random())+1}.svg`);
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 
     {{partial "meta"}}
 
@@ -16,6 +17,9 @@
     <title>Loonix | {{.Page.Title}}</title>
     {{ $styles := resources.Get "css/head.css" | minify }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+    {{ $radioStyles := resources.Get "css/radio.css" | minify }}
+    <link rel="stylesheet" href="{{ $radioStyles.Permalink }}" media="screen">
     
     <meta charset="UTF-8">
 </head>

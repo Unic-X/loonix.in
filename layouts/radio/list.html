@@ -1,0 +1,16 @@
+{{- define "main" }}
+
+    <div class="wrapper">
+        <h1>My Radio Station</h1>
+        <div class="player">
+            <button id="play-pause" class="btn">Play</button>
+            <div class="track-info">
+                <p><strong>Now Playing:</strong></p>
+                <p id="artist-name">Artist: Loading...</p>
+                <p id="song-title">Song: Loading...</p>
+            </div>
+        </div>
+    </div>
+    {{ $script := resources.Get "js/radio.js" | minify }}
+    <script src="{{ $script.Permalink }}" defer></script>
+{{- end }}
