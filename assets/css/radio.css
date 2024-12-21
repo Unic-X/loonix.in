@@ -45,7 +45,7 @@ body {
 
 .radio-container {
   position: relative;
-  background: rgba(53, 53, 53, 0.6);
+  background: rgba(53, 53, 53, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2rem;
@@ -81,10 +81,8 @@ body {
   width: 200px;
   height: 200px;
   margin: 0 auto 2rem;
-  border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  animation: rotate 20s linear infinite;
   animation-play-state: paused;
 }
 
@@ -216,5 +214,118 @@ body {
   .play-pause-btn {
       width: 50px;
       height: 50px;
+  }
+}
+
+header.site-head {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(53, 53, 53, 0.1); /* Translucent background */
+  backdrop-filter: blur(10px); /* Apply blur effect for modern UI */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease-in-out;
+  padding: 0.5rem 0;
+}
+
+header.site-head:hover {
+  background: rgba(53, 53, 53, 0.3); /* Slightly darken on hover */
+}
+
+.site-head__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_wrapper {
+  justify-content: space-between;
+  position: relative;
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-head__brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-head__brand .icon {
+  transition: transform 0.3s ease;
+}
+
+.site-head__nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list li {
+  margin-left: 2rem;
+}
+
+.nav__list a {
+  text-decoration: none;
+  color: #e5e9f0;
+  font-family: "GT Walsheim Pro Medium Regular", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav__list a:hover {
+  color: rgba(235, 203, 139, 0.95); /* Change color on hover */
+}
+
+.toggle-button {
+  display: none; /* Hidden by default, for mobile styles */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  cursor: pointer;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 14px;
+  background: #e5e9f0;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .nav__list {
+    display: none; /* Hidden by default for mobile */
+    flex-direction: column;
+    background: rgba(53, 53, 53, 0.95);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav__list.active {
+    display: flex; /* Display menu when active */
+  }
+
+  .nav__list li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .toggle-button {
+    margin-inline-end: 10px;
+    display: flex; /* Show toggle button for mobile */
   }
 }

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loonix Radio Player</title>
+    <title>Loonix | Radio</title>
+    <link rel="icon" id="favicon" type="image/png" sizes="32x32" href="/loonix5.svg">
     {{ $radioStyles := resources.Get "css/radio.css" | minify }}
     <link rel="stylesheet" href="{{ $radioStyles.Permalink }}" media="screen">
 </head>
 <body>
+    {{partial "header"}}
     <div class="blurred-background"></div>
     <div class="radio-container">
         <div class="radio-header">
@@ -20,7 +22,7 @@
             <button class="control-btn play-pause-btn" id="playPauseBtn">▶</button>
         </div>
         <div class="volume-control">
-            <input type="range" min="0" max="100" step="0.1" value="1" class="volume-slider" id="volumeSlider">
+            <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider" id="volumeSlider">
         </div>
         <div class="now-playing">
             <h2 class="song-title" id="songTitle">Loading...</h2>
