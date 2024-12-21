@@ -6,6 +6,8 @@ author: Unic-X
 tags: ['Rant', 'Web-Radio', 'LiquidSoap', 'Icecast']
 
 ---
+Link to my personal [Radio](/radio/) :)
+
 
 ## Hate for apt 
 
@@ -13,6 +15,7 @@ I feel the shittest package manager to ever exist is apt. Two packages needed di
 
 
 ## Setup
+
 
 > The icecast2 won't work if you are using Ubuntu 22.xx because of apt's bullshittry
 
