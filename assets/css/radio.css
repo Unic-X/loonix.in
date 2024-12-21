@@ -127,7 +127,7 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #e94545;
+  background: rgba(231, 62, 62, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -302,7 +302,7 @@ header.site-head:hover {
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .nav__list {
     display: none; /* Hidden by default for mobile */
     flex-direction: column;
