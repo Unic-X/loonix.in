@@ -1,33 +1,220 @@
+@font-face {
+  font-family: "GT Walsheim Pro Medium Regular";
+  src: url("/fonts/GT_Walsheim_Pro_Medium_Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: epilogue;
+  font-style: normal;
+  font-weight: 900;
+  src: url(https://fonts.gstatic.com/s/epilogue/v7/O4ZMFGj5hxF0EhjimngomvnCCtqb30OXmTTiDA.ttf) format("truetype");
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('/radio.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "GT Walsheim Pro Medium Regular";
+}
+
+.blurred-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  filter: blur(10px);
+  z-index: -1;
+}
 
 .radio-container {
-    padding: 20px;
+  position: relative;
+  background: rgba(53, 53, 53, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
-
-.player {
-    margin-top: 20px;
+.radio-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.btn {
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.radio-title {
+  font-family: epilogue, segoe ui, Roboto, helvetica neue, Arial, sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #e5e9f0;
 }
 
-.btn:hover {
-    background-color: #e85b50;
+.radio-title:after {
+  content: '.';
+  color: rgba(235, 203, 139, 0.95);
 }
 
-.track-info {
-    font-size: 1.2em;
-    margin-top: 20px;
+.radio-subtitle {
+  font-size: 1rem;
+  color: #a7a7a7;
 }
 
-#artist-name, #song-title {
-    margin: 5px 0;
+.album-art {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: rotate 20s linear infinite;
+  animation-play-state: paused;
+}
+
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.album-art.playing {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.radio-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin: 0 1rem;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+}
+
+.play-pause-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e94545;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 5px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #e94545 0%, #a7a7a7 0%);
+  outline: none;
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e94545;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Smooth thumb animation */
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2); /* Enlarge thumb on hover for better user interaction */
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e94545;
+  cursor: pointer;
+  transition: transform 0.2s ease; /* Smooth thumb animation */
+}
+
+.volume-slider::-moz-range-thumb:hover {
+  transform: scale(1.2); /* Enlarge thumb on hover */
+}
+
+.now-playing {
+  text-align: center;
+}
+
+.song-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.artist-name {
+  font-size: 1rem;
+  color: #a7a7a7;
+}
+
+@media (max-width: 480px) {
+  .radio-container {
+      padding: 1.5rem;
+  }
+
+  .radio-title {
+      font-size: 2rem;
+  }
+
+  .album-art {
+      width: 150px;
+      height: 150px;
+  }
+
+  .control-btn {
+      font-size: 1.5rem;
+  }
+
+  .play-pause-btn {
+      width: 50px;
+      height: 50px;
+  }
 }

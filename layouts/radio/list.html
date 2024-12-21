@@ -1,16 +1,34 @@
-{{- define "main" }}
-
-    <div class="wrapper">
-        <h1>My Radio Station</h1>
-        <div class="player">
-            <button id="play-pause" class="btn">Play</button>
-            <div class="track-info">
-                <p><strong>Now Playing:</strong></p>
-                <p id="artist-name">Artist: Loading...</p>
-                <p id="song-title">Song: Loading...</p>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loonix Radio Player</title>
+    {{ $radioStyles := resources.Get "css/radio.css" | minify }}
+    <link rel="stylesheet" href="{{ $radioStyles.Permalink }}" media="screen">
+</head>
+<body>
+    <div class="blurred-background"></div>
+    <div class="radio-container">
+        <div class="radio-header">
+            <h1 class="radio-title">Randio</h1>
+        </div>
+        <div class="album-art" id="albumArt">
+            <img src="/cover.jpg" alt="Album Art">
+        </div>
+        <div class="radio-controls">
+            <button class="control-btn play-pause-btn" id="playPauseBtn">▶</button>
+        </div>
+        <div class="volume-control">
+            <input type="range" min="0" max="100" step="0.1" value="1" class="volume-slider" id="volumeSlider">
+        </div>
+        <div class="now-playing">
+            <h2 class="song-title" id="songTitle">Loading...</h2>
+            <p class="artist-name" id="artistName">Please wait</p>
         </div>
     </div>
-    {{ $script := resources.Get "js/radio.js" | minify }}
-    <script src="{{ $script.Permalink }}" defer></script>
-{{- end }}
+    {{$script:= resources.Get "js/radio.js"| minify}}
+    <script src="{{$script.Permalink}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</body>
+</html>

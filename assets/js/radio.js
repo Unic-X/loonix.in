@@ -1,72 +1,76 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const playPauseButton = document.getElementById("play-pause");
-    const artistNameElem = document.getElementById("artist-name");
-    const songTitleElem = document.getElementById("song-title");
+document.addEventListener('DOMContentLoaded', () => {
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+    const albumArt = document.getElementById('albumArt');
+    const songTitle = document.getElementById('songTitle');
+    const artistName = document.getElementById('artistName');
 
-    // Initialize the Howler.js player
-    const radio = new Howl({
-        src: ['https://stream.zeno.fm/shj04cslskxtv'], // Your Zeno.fm stream URL
-        html5: true, 
-        autoplay: false, 
-        format: ['mp3'],
-    });
+    const stations = [
+        { url: 'https://stream.zeno.fm/shj04cslskxtv', name: 'Sexy Lounge' },
+        { url: 'https://stream.zeno.fm/0r0xa792kwzuv', name: 'Smooth Jazz' },
+        { url: 'https://stream.zeno.fm/6qx3pzm4v2zuv', name: 'Chill Out' }
+    ];
 
+    let currentStationIndex = 0;
     let isPlaying = false;
 
-    // Play/Pause functionality
-    playPauseButton.addEventListener("click", () => {
-        if (!isPlaying) {
-            radio.play();
-            playPauseButton.textContent = "Pause";
-            isPlaying = true;
-        } else {
-            radio.pause();
-            playPauseButton.textContent = "Play";
-            isPlaying = false;
-        }
+    const radio = new Howl({
+        src: [stations[currentStationIndex].url],
+        html5: true,
+        format: ['mp3', 'aac']
     });
 
-    // Establish the EventSource connection for real-time metadata updates
-    const metadataUrl = 'https://api.zeno.fm/mounts/metadata/subscribe/shj04cslskxtv';
+    function togglePlayPause() {
+        if (isPlaying) {
+            radio.pause();
+            playPauseBtn.textContent = '▶';
+            albumArt.classList.remove('playing');
+        } else {
+            radio.play();
+            playPauseBtn.textContent = '⏸';
+            albumArt.classList.add('playing');
+        }
+        isPlaying = !isPlaying;
+    }
+
+
+    playPauseBtn.addEventListener('click', togglePlayPause);
+    volumeSlider.addEventListener('input', (e) => {
+        radio.volume(parseFloat(e.target.value));
+    });
+
+    // Metadata handling
+    const metadataUrl = `https://api.zeno.fm/mounts/metadata/subscribe/${stations[currentStationIndex].url.split('/').pop()}`;
     const eventSource = new EventSource(metadataUrl);
 
-    eventSource.addEventListener("message", (event) => {
+    eventSource.addEventListener('message', (event) => {
         try {
             const data = JSON.parse(event.data);
             if (data && data.streamTitle) {
-                // Example response: "Artist - Song Title"
-                const [artist, song] = data.streamTitle.split(" - ");
-
-                artistNameElem.textContent = `Artist: ${artist || "Unknown"}`;
-                songTitleElem.textContent = `Song: ${song || "Unknown"}`;
-
-                // Update media session metadata (if supported)
-                if ('mediaSession' in navigator) {
-                    navigator.mediaSession.metadata = new MediaMetadata({
-                        title: song || "Unknown",
-                        artist: artist || "Unknown",
-                        artwork: [
-                            { src: 'img/cover.png', sizes: '96x96', type: 'image/png' }, // Replace with actual artwork URL if available
-                            { src: 'img/cover.png', sizes: '128x128', type: 'image/png' },
-                            { src: 'img/cover.png', sizes: '192x192', type: 'image/png' },
-                            { src: 'img/cover.png', sizes: '256x256', type: 'image/png' },
-                            { src: 'img/cover.png', sizes: '384x384', type: 'image/png' },
-                            { src: 'img/cover.png', sizes: '512x512', type: 'image/png' },
-                        ],
-                    });
-                }
-            } else {
-                artistNameElem.textContent = "Artist: Unavailable";
-                songTitleElem.textContent = "Song: Unavailable";
+                const [artist, title] = data.streamTitle.split(' - ');
+                songTitle.textContent = title || 'Unknown';
+                artistName.textContent = artist || 'Unknown Artist';
             }
         } catch (error) {
-            console.error("Error parsing metadata:", error);
+            console.error('Error parsing metadata:', error);
         }
     });
 
-    eventSource.addEventListener("error", (error) => {
-        console.error("Error with SSE connection:", error);
-        artistNameElem.textContent = "Artist: Unavailable";
-        songTitleElem.textContent = "Song: Unavailable";
+    eventSource.addEventListener('error', () => {
+        songTitle.textContent = 'Metadata Unavailable';
+        artistName.textContent = stations[currentStationIndex].name;
+    });
+
+    // Update album art periodically
+    setInterval(() => {
+        if (isPlaying) {
+            albumArt.querySelector('img').src = `/cover.jpg`;
+        }
+    }, 30000);
+
+    // Cleanup
+    window.addEventListener('beforeunload', () => {
+        eventSource.close();
+        radio.unload();
     });
 });
