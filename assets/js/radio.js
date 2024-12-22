@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const stations = [
         { url: 'https://stream.zeno.fm/shj04cslskxtv', station: 'Japanese' },
         { url: 'https://stream.zeno.fm/xwbmee4vufouv', station: 'Spotify' },
-        { url: 'https://stream.zeno.fm/rmsvp9ef3bqtv', station: 'Personal' }
+        { url: 'https://stream.zeno.fm/rmsvp9ef3bqtv', station: 'Personal' },
+        { url : 'https://stream.zeno.fm/iifyvwb62oqtv', station: 'Chill'}
     ];
 
     let currentStationIndex = 1;
