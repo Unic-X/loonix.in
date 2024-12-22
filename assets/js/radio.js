@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const artistName = document.getElementById('artistName');
     const stationList = document.getElementById('stationList');
 
+    let artist, title;
+
     const stations = [
         { url: 'https://stream.zeno.fm/shj04cslskxtv', station: 'Japanese' },
         { url: 'https://stream.zeno.fm/xwbmee4vufouv', station: 'Spotify' },
@@ -16,11 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let isPlaying = false;
     let eventSource;
 
+    // Retrieve volume from localStorage or set default value
+    const savedVolume = parseFloat(localStorage.getItem('radioVolume')) || 0.5;
+
     let radio = new Howl({
         src: [stations[currentStationIndex].url],
         html5: true,
-        format: ['mp3', 'aac']
+        format: ['mp3', 'aac'],
+        volume: savedVolume // Initialize with saved volume
     });
+
+    volumeSlider.value = savedVolume; // Set slider to saved volume
 
     function togglePlayPause() {
         const playIcon = document.getElementById('playIcon');
@@ -49,7 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         radio = new Howl({
             src: [stations[currentStationIndex].url],
             html5: true,
-            format: ['mp3', 'aac']
+            format: ['mp3', 'aac'],
+            volume: parseFloat(localStorage.getItem('radioVolume')) || 0.5 // Preserve volume on station change
         });
 
         if (isPlaying) {
@@ -69,9 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const data = JSON.parse(event.data);
                 if (data && data.streamTitle) {
-                    const [artist, title] = data.streamTitle.split(' - ');
+                    [artist, title] = data.streamTitle.split(' - ');
                     songTitle.textContent = title || 'Unknown';
                     artistName.textContent = artist || 'Unknown Artist';
+
+                    if ('mediaSession' in navigator) {
+                        console.log(`${artist}-${title}`)
+                        navigator.mediaSession.metadata = new MediaMetadata({
+                            title: title || "Loonix Radio",
+                            artist: artist || "Unknown Artist",
+                        });
+                    }
                 }
             } catch (error) {
                 console.error('Error parsing metadata:', error);
@@ -92,9 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const data = JSON.parse(event.data);
             if (data && data.streamTitle) {
-                const [artist, title] = data.streamTitle.split(' - ');
+                [artist, title] = data.streamTitle.split(' - ');
                 songTitle.textContent = title || 'Unknown';
                 artistName.textContent = artist || 'Unknown Artist';
+                if ('mediaSession' in navigator) {
+                    console.log(`${artist}-${title}`)
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: title || "Loonix Radio",
+                        artist: artist || "Unknown Artist",
+                    });
+                }
             }
         } catch (error) {
             console.error('Error parsing metadata:', error);
@@ -104,7 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
     playPauseBtn.addEventListener('click', togglePlayPause);
 
     volumeSlider.addEventListener('input', (e) => {
-        radio.volume(parseFloat(e.target.value));
+        const volume = parseFloat(e.target.value);
+        radio.volume(volume);
+        localStorage.setItem('radioVolume', volume); // Save volume to localStorage
     });
 
     stationList.addEventListener('click', (e) => {
