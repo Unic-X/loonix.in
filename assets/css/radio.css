@@ -31,17 +31,59 @@ body {
 }
 
 .blurred-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  transform: translate(-5%, -5%); /* Center the extended blur */
+  height: 110%;
   background-image: inherit;
   background-size: inherit;
   background-position: inherit;
   filter: blur(10px);
   z-index: -1;
 }
+
+.radio-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.station-list {
+  width: 15rem;
+  margin-top: 5%;
+  background: rgba(53, 53, 53, 0.8);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.station-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.station-list li {
+  padding: 0.5rem 1rem;
+  margin: 2%;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #e5e9f0;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.station-list li:hover,
+.station-list li.active {
+  background-color: #e94545;
+  color: #ffffff;
+}
+
 
 .radio-container {
   position: relative;
@@ -50,9 +92,9 @@ body {
   border-radius: 20px;
   padding: 2rem;
   width: 90%;
+  margin-top: 3rem;
   max-width: 500px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  z-index: 1;
 }
 
 .radio-header {
@@ -150,6 +192,15 @@ body {
   transition: background 0.3s ease; /* Smooth background transition */
 }
 
+.icon {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+
 .volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -222,9 +273,9 @@ header.site-head {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(53, 53, 53, 0.1); /* Translucent background */
-  backdrop-filter: blur(10px); /* Apply blur effect for modern UI */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  background: rgba(53, 53, 53, 0.1); 
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   transition: background-color 0.3s ease-in-out;
   padding: 0.5rem 0;
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {{partial "meta"}}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loonix | Radio</title>
@@ -11,22 +12,39 @@
 <body>
     {{partial "header"}}
     <div class="blurred-background"></div>
-    <div class="radio-container">
-        <div class="radio-header">
-            <h1 class="radio-title">Randio</h1>
+    <div class="radio-wrapper">
+        <div class="station-list">
+            <ul id="stationList">
+                <li data-index="0">Japanese</li>
+                <li data-index="1" class="active">Spotify</li>
+                <li data-index="2">Personal</li>
+            </ul>
         </div>
-        <div class="album-art" id="albumArt">
-            <img src="/cover.jpg" alt="Album Art">
-        </div>
-        <div class="radio-controls">
-            <button class="control-btn play-pause-btn" id="playPauseBtn">▶</button>
-        </div>
-        <div class="volume-control">
-            <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider" id="volumeSlider">
-        </div>
-        <div class="now-playing">
-            <h2 class="song-title" id="songTitle">Loading...</h2>
-            <p class="artist-name" id="artistName">Please wait</p>
+        <div class="radio-container">
+            <div class="radio-header">
+                <h1 class="radio-title">Radio</h1>
+            </div>
+            <div class="album-art" id="albumArt">
+                <img src="/Cover.png" alt="Album Art">
+            </div>
+            <div class="radio-controls">
+                <button class="control-btn play-pause-btn" id="playPauseBtn">
+                    <svg id="playIcon" class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5 3, 19 12, 5 21"></polygon>
+                    </svg>
+                    <svg id="pauseIcon" class="icon hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                </button>
+            </div>
+            <div class="volume-control">
+                <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider" id="volumeSlider">
+            </div>
+            <div class="now-playing">
+                <h2 class="song-title" id="songTitle">Loading...</h2>
+                <p class="artist-name" id="artistName">Please wait</p>
+            </div>
         </div>
     </div>
     {{$script:= resources.Get "js/radio.js"| minify}}
