@@ -31,3 +31,6 @@ We need to foster a culture where exploration and failure are seen as integral t
 This isn't to say academic success or polished projects are without merit—they have their place. But for anyone passionate about technology, remember: grades or fancy project portfolios are just one side of the story. To truly learn, go beyond. Read more for yourself, and challenge your own understanding.
 
 *Let’s stop measuring knowledge by shallow metrics and start valuing the depth of exploration.*
+
+### Here's a fun puzzle for the reader try to figure it out
+61EEF956778729BA1F5D3F7553F424FDC1A0A0E6E4CE1E63240E5FFB1935DC65 (d=5FFE6F8F97422323)(128 Bit)
