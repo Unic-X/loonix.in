@@ -1,5 +1,6 @@
 .chroma {
     padding: 1rem;
+    font-size: 1rem;
     overflow: scroll;
     overflow-y: hidden;
     /* Adjust the padding value as per your preference */

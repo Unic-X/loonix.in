@@ -2,6 +2,7 @@
 {{$temp:= .Get 0}}
 {{ $imageSrc := printf "/blogs/img/%s" $temp}}
 {{ $altText := .Get 1 }}
+{{ $style := .Get 2 | default "width: 100%; height: auto;" }}
 
-  <img class="landscape" src="{{ $imageSrc | absURL }}" alt="{{ $altText }}" />
+  <img class="landscape" src="{{ $imageSrc | absURL }}" alt="{{ $altText }}" style="{{ $style }}" />
 <!--image -->

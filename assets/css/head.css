@@ -1,24 +1,26 @@
 :root {
     /* Color palette */
-    --bg-color: #2e3440;
-    --text-color: #e5e9f0;
-    --accent-color: rgba(235, 203, 139, 0.95);
-    --secondary-text-color: #c1c2c4;
-    --glare-color: #39404d;
-    --dot-color: #cac6b8;
-    --link-color: #88c0d0;
-    --active-nav-color: #bf616a;
-    --scrollbar-thumb-color: #787f90;
-    --code-bg-color: #6d6b6b;
-    --blockquote-border-color: var(--accent-color);
-    --button-bg-color: #404857;
-    --border-color: #88c0d0;
-    --scrollbar-track-color: #5e81ac;
+      --bg-color: #181a20;
+      --text-color: #e6e6e6;
+      --accent-color: #f6c177;
+      --secondary-text-color: #a0aec0;
+      --glare-color: #23262f;
+      --dot-color: #2d3748;
+      --link-color: #63b3ed;
+      --active-nav-color: #f6c177;
+      --scrollbar-thumb-color: #2d3748;
+      --code-bg-color: #23262f;
+      --blockquote-border-color: var(--accent-color);
+      --button-bg-color: #2a2e39;
+      --border-color: #2d3748;
+      --scrollbar-track-color: #23262f;
   
     /* Spacing */
     --flow-space: 1.77rem;
-    --dot-shadow-size: 0.75rem;
+    --dot-shadow-size: 1rem;
   }
+
+  svg circle { fill: var(--dot-color); }
   
   @font-face {
     font-family: "GT Walsheim Pro Medium Regular";
@@ -271,7 +273,7 @@
     width: calc(100% + calc(var(--dot-shadow-size) * 2));
     opacity: 60%;
     height: calc(100% + calc(var(--dot-shadow-size) * 2));
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxjaXJjbGUgZmlsbD0iI2NhYzZiOCIgY3g9IjEiIGN5PSI1IiByPSIxIi8+PGNpcmNsZSBmaWxsPSIjY2FjNmI4IiBjeD0iNCIgY3k9IjIiIHI9IjEiLz48L3N2Zz4=);
+    background-image: url('data:image/svg+xml;utf8,<svg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"><circle fill="%232d3748" cx="1" cy="5" r="1"/><circle fill="%232d3748" cx="4" cy="2" r="1"/></svg>');
     position: absolute;
     top: calc(var(--dot-shadow-size) * -1);
     left: calc(var(--dot-shadow-size) * -1);

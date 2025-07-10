@@ -1,0 +1,9 @@
+<div class="youtube-grid" style="display: grid; grid-template-columns: repeat({{ .Get 0 }}, 1fr); gap: 16px;">
+    {{ range $i, $url := .Params }}
+        {{ if gt $i 0 }}
+        <div class="youtube-grid-item">
+            <iframe width="100%" height="315" src="{{ $url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {{ end }}
+    {{ end }}
+</div>

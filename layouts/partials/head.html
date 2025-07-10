@@ -3,10 +3,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" id="favicon2" type="image/png" sizes="16x16" href="/loonix.svg">
     <script>
+        let randomSvg = Math.floor(6*Math.random())
         let faviconElem = document.getElementById('favicon');
-        faviconElem.setAttribute('href',`./loonix${Math.floor(6*Math.random())+1}.svg`);
-        let faviconElem2 = document.getElementById('favicon2');
-        faviconElem.setAttribute('href',`./loonix${Math.floor(6*Math.random())+1}.svg`);
+        faviconElem.setAttribute('href',`/loonix${randomSvg+1}.svg`);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 

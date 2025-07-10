@@ -1,5 +1,5 @@
 ---
-title : Mistborn
+title : Mistborn Book I
 img : mistborn.jpg
 alt: Brandon
 tags: ['Brandon','Sanderson', 'Fiction']

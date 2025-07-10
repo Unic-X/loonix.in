@@ -1,5 +1,5 @@
 ---
-title : Books
+title: Books
 ---
 
-The books I have read.
+A curated list of books I and my brother own, have read, or plan to read.
