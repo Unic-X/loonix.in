@@ -16,6 +16,6 @@ Hey there! 👋 I'm always up for a chat. Here's how you can reach me:
 
 
 ### Preferably reach out via email:
-- ✉️ [arman at loonix dot in](mailto:arman@loonix.in) : Drop me a mail, and let's start a conversation!
+- ✉️ [arman at friedpotato dot in](mailto:arman@friedpotato.in) : Drop me a mail, and let's start a conversation!
 
 Feel free to connect or contribute – looking forward to hearing from you!

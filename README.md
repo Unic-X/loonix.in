@@ -1,9 +1,9 @@
-# Loonix.in : Website for personal Masti
+# friedpotato.in : Website for personal Masti
 
 
-Repository for our personal [wesbite][site]
+Repository for our personal [website][site]
 
-[site]: http://loonix.in
+[site]: http://friedpotato.in
 
 ## Usage
 
@@ -18,7 +18,7 @@ Repository for our personal [wesbite][site]
 
 
 ```sh
-git clone https://github.com/bsach64/loonix.in
+git clone https://github.com/Unic-X/loonix.in
 cd loonix.in
 ```
 
@@ -37,7 +37,7 @@ Once your website is ready to be made public, run `hugo` in the terminal from th
 
 
 ## Release
-The website can be viewed [here](https://loonix.in)
+The website can be viewed [here](https://friedpotato.in)
 
 ## License
 

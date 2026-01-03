@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if ('mediaSession' in navigator) {
                         console.log(`${artist}-${title}`)
                         navigator.mediaSession.metadata = new MediaMetadata({
-                            title: title || "Loonix Radio",
+                            title: title || "FriedPotato Radio",
                             artist: artist || "Unknown Artist",
                         });
                     }
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if ('mediaSession' in navigator) {
                     console.log(`${artist}-${title}`)
                     navigator.mediaSession.metadata = new MediaMetadata({
-                        title: title || "Loonix Radio",
+                        title: title || "FriedPotato Radio",
                         artist: artist || "Unknown Artist",
                     });
                 }

@@ -1,6 +1,6 @@
 baseURL = "https://www.friedpotato.in/"
 languageCode = 'en-us'
-title = 'Loonix Ji'
+title = 'FriedPotato'
 tableOfContents = true
 [outputs]
  home = ['html', 'rss']
