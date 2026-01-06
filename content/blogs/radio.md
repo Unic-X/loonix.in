@@ -34,7 +34,7 @@ Here's my `icecast.xml` file.
 <icecast>
 
     <location>India</location>
-    <admin>arman@loonix.in</admin>
+    <admin>arman@friedpotato.in</admin>
 
     <limits>
         <clients>100</clients>
@@ -60,7 +60,7 @@ Here's my `icecast.xml` file.
         <admin-password>Your_Admin_Password</admin-password>
     </authentication>
 
-    <hostname>loonix.in</hostname>
+    <hostname>friedpotato.in</hostname>
 
     <listen-socket>
 	<port>8000</port>
